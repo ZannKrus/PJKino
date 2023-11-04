@@ -37,6 +37,7 @@
             PanelR = new Panel();
             PanelL = new Panel();
             Greet_text = new Label();
+            button1 = new Button();
             PanelT.SuspendLayout();
             PanelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -56,10 +57,11 @@
             // 
             // PanelBack
             // 
+            PanelBack.BackgroundImageLayout = ImageLayout.Stretch;
             PanelBack.Controls.Add(pictureBox1);
             PanelBack.Location = new Point(895, 7);
             PanelBack.Name = "PanelBack";
-            PanelBack.Size = new Size(74, 34);
+            PanelBack.Size = new Size(74, 37);
             PanelBack.TabIndex = 2;
             PanelBack.Paint += panel2_Paint_1;
             // 
@@ -125,6 +127,16 @@
             Greet_text.Text = "Добро пожаловать,  WIP";
             Greet_text.Click += Greet_text_Click;
             // 
+            // button1
+            // 
+            button1.Location = new Point(465, 310);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 6;
+            button1.Text = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Welcum
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -132,6 +144,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(992, 507);
+            Controls.Add(button1);
             Controls.Add(Greet_text);
             Controls.Add(PanelL);
             Controls.Add(PanelR);
@@ -155,5 +168,6 @@
         private Panel PanelBack;
         private PictureBox pictureBox1;
         private Label Greet_text;
+        private Button button1;
     }
 }
