@@ -7,16 +7,6 @@ namespace prjkn
             InitializeComponent();
         }
 
-        private void Panel1_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void Welcum_Load(object sender, EventArgs e)
         {
             PanelR.BackColor = Color.FromArgb(100, 0, 0, 0);
@@ -59,11 +49,6 @@ namespace prjkn
         }
 
         private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
         {
 
         }

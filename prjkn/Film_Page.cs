@@ -29,22 +29,62 @@ namespace prjkn
             PanelR.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelL.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelT.BackColor = Color.FromArgb(150, 100, 79, 47);
+            PanelBack.BackColor = Color.FromArgb(75, 255, 255, 255);
             Menu_button.BackColor = Color.FromArgb(0, 100, 79, 47);
-            Search_Button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Menu_button.FlatAppearance.BorderSize = 0;
             Menu_button.FlatStyle = FlatStyle.Flat;
+            Search_Button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Search_Button.FlatAppearance.BorderSize = 0;
             Search_Button.FlatStyle = FlatStyle.Flat;
-            PanelBack.BackColor = Color.FromArgb(75, 255, 255, 255);
             Home_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Home_button.FlatAppearance.BorderSize = 0;
             Home_button.FlatStyle = FlatStyle.Flat;
+            film_name.BackColor = Color.FromArgb(0, 0, 0, 0);
+            director_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            director_name_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            mainrole_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            mainrole_name_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            genre_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            genre_name_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            description_label.BackColor = Color.FromArgb(0, 0, 0, 0);
         }
 
         private void Home_button_Click(object sender, EventArgs e)
         {
             this.Close();
             welcumForm.Show();
+        }
+
+        private void PanelL_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Film_Page_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (welcumForm != null && welcumForm.Visible == false)
+            {
+                Application.Exit(); // Закрыть приложение, если главное окно скрыто
+            }
+            else
+            {
+                welcumForm.Show(); // Показать главное окно, если оно видимо
+            }
+        }
+
+        private void director_textBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void film_name_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
