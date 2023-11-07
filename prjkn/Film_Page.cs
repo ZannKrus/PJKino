@@ -47,12 +47,18 @@ namespace prjkn
             genre_label.BackColor = Color.FromArgb(0, 0, 0, 0);
             genre_name_label.BackColor = Color.FromArgb(0, 0, 0, 0);
             description_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, pictureBox3.Width - 3, pictureBox3.Height - 3);
+            Region rg = new Region(gp);
+            pictureBox3.Region = rg;
         }
 
         private void Home_button_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Welcum wlc = new Welcum();
+            wlc.ShowDialog();
             this.Close();
-            welcumForm.Show();
         }
 
         private void PanelL_Paint(object sender, PaintEventArgs e)

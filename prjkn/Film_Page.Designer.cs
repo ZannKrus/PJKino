@@ -32,8 +32,6 @@
             PanelR = new Panel();
             PanelT = new Panel();
             Home_button = new Button();
-            PanelBack = new Panel();
-            pictureBox1 = new PictureBox();
             Search_Button = new Button();
             Menu_button = new Button();
             PanelL = new Panel();
@@ -46,10 +44,14 @@
             mainrole_name_label = new Label();
             genre_label = new Label();
             genre_name_label = new Label();
+            PanelBack = new Panel();
+            pictureBox1 = new PictureBox();
+            pictureBox3 = new PictureBox();
             PanelT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             PanelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
             // PanelR
@@ -63,8 +65,8 @@
             // 
             // PanelT
             // 
-            PanelT.Controls.Add(Home_button);
             PanelT.Controls.Add(PanelBack);
+            PanelT.Controls.Add(Home_button);
             PanelT.Controls.Add(Search_Button);
             PanelT.Controls.Add(Menu_button);
             PanelT.Dock = DockStyle.Top;
@@ -84,22 +86,6 @@
             Home_button.TabIndex = 4;
             Home_button.UseVisualStyleBackColor = false;
             Home_button.Click += Home_button_Click;
-            // 
-            // PanelBack
-            // 
-            PanelBack.Controls.Add(pictureBox1);
-            PanelBack.Location = new Point(895, 7);
-            PanelBack.Name = "PanelBack";
-            PanelBack.Size = new Size(74, 34);
-            PanelBack.TabIndex = 3;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(13, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(47, 34);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
             // 
             // Search_Button
             // 
@@ -231,6 +217,37 @@
             genre_name_label.TabIndex = 20;
             genre_name_label.Text = "Жанры:";
             // 
+            // PanelBack
+            // 
+            PanelBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            PanelBack.BackgroundImageLayout = ImageLayout.Stretch;
+            PanelBack.Controls.Add(pictureBox3);
+            PanelBack.Controls.Add(pictureBox1);
+            PanelBack.Location = new Point(908, 3);
+            PanelBack.Name = "PanelBack";
+            PanelBack.Size = new Size(72, 44);
+            PanelBack.TabIndex = 21;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            pictureBox1.Location = new Point(-50, 0);
+            pictureBox1.MaximumSize = new Size(44, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 0);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            pictureBox3.Location = new Point(14, 0);
+            pictureBox3.MaximumSize = new Size(44, 0);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(44, 44);
+            pictureBox3.TabIndex = 21;
+            pictureBox3.TabStop = false;
+            // 
             // Film_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -255,9 +272,10 @@
             FormClosing += Film_Page_FormClosing;
             Load += Film_Page_Load;
             PanelT.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             PanelBack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -269,8 +287,6 @@
         private Panel PanelL;
         private Button Menu_button;
         private Button Search_Button;
-        private Panel PanelBack;
-        private PictureBox pictureBox1;
         private Button Home_button;
         private PictureBox pictureBox2;
         private Label film_name;
@@ -281,5 +297,8 @@
         private Label mainrole_name_label;
         private Label genre_label;
         private Label genre_name_label;
+        private Panel PanelBack;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox3;
     }
 }

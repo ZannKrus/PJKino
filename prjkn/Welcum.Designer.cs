@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Welcum));
             PanelT = new Panel();
+            Home_button = new Button();
             PanelBack = new Panel();
             pictureBox1 = new PictureBox();
             Search_Button = new Button();
@@ -45,6 +46,7 @@
             // 
             // PanelT
             // 
+            PanelT.Controls.Add(Home_button);
             PanelT.Controls.Add(PanelBack);
             PanelT.Controls.Add(Search_Button);
             PanelT.Controls.Add(Menu_button);
@@ -55,23 +57,40 @@
             PanelT.TabIndex = 2;
             PanelT.Paint += panel2_Paint;
             // 
+            // Home_button
+            // 
+            Home_button.BackColor = Color.Transparent;
+            Home_button.BackgroundImage = (Image)resources.GetObject("Home_button.BackgroundImage");
+            Home_button.BackgroundImageLayout = ImageLayout.Stretch;
+            Home_button.Location = new Point(94, 11);
+            Home_button.Name = "Home_button";
+            Home_button.Size = new Size(35, 30);
+            Home_button.TabIndex = 7;
+            Home_button.UseVisualStyleBackColor = false;
+            Home_button.Click += Home_button_Click;
+            // 
             // PanelBack
             // 
+            PanelBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PanelBack.BackgroundImageLayout = ImageLayout.Stretch;
             PanelBack.Controls.Add(pictureBox1);
-            PanelBack.Location = new Point(895, 7);
+            PanelBack.Location = new Point(908, 3);
             PanelBack.Name = "PanelBack";
-            PanelBack.Size = new Size(74, 37);
+            PanelBack.Size = new Size(72, 44);
             PanelBack.TabIndex = 2;
+            PanelBack.Click += PanelBack_Click;
             PanelBack.Paint += panel2_Paint_1;
             // 
             // pictureBox1
             // 
-            pictureBox1.Location = new Point(13, 0);
+            pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
+            pictureBox1.Location = new Point(14, 0);
+            pictureBox1.MaximumSize = new Size(44, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(47, 34);
+            pictureBox1.Size = new Size(44, 44);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += PanelBack_Click;
             // 
             // Search_Button
             // 
@@ -117,19 +136,20 @@
             // 
             // Greet_text
             // 
-            Greet_text.AutoSize = true;
+            Greet_text.Anchor = AnchorStyles.None;
             Greet_text.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point);
             Greet_text.ForeColor = Color.White;
-            Greet_text.Location = new Point(187, 148);
+            Greet_text.Location = new Point(235, 203);
             Greet_text.Name = "Greet_text";
             Greet_text.Size = new Size(520, 55);
             Greet_text.TabIndex = 5;
             Greet_text.Text = "Добро пожаловать,  WIP";
+            Greet_text.TextAlign = ContentAlignment.MiddleCenter;
             Greet_text.Click += Greet_text_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(465, 310);
+            button1.Location = new Point(556, 396);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 6;
@@ -156,7 +176,6 @@
             PanelBack.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -169,5 +188,6 @@
         private PictureBox pictureBox1;
         private Label Greet_text;
         private Button button1;
+        private Button Home_button;
     }
 }
