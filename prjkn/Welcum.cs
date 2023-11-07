@@ -56,7 +56,10 @@ namespace prjkn
 
         private void Search_Button_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            Search search = new Search();
+            search.ShowDialog();
+            this.Close();
         }
 
         private void panel2_Paint_1(object sender, PaintEventArgs e)
