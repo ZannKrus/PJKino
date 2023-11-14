@@ -26,10 +26,12 @@ namespace prjkn
 
         private void Film_Page_Load(object sender, EventArgs e)
         {
+            //панели
             PanelR.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelL.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelT.BackColor = Color.FromArgb(150, 100, 79, 47);
             PanelBack.BackColor = Color.FromArgb(75, 255, 255, 255);
+            //кнопки
             Menu_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Menu_button.FlatAppearance.BorderSize = 0;
             Menu_button.FlatStyle = FlatStyle.Flat;
@@ -39,6 +41,7 @@ namespace prjkn
             Home_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Home_button.FlatAppearance.BorderSize = 0;
             Home_button.FlatStyle = FlatStyle.Flat;
+            //тексты
             film_name.BackColor = Color.FromArgb(0, 0, 0, 0);
             director_label.BackColor = Color.FromArgb(0, 0, 0, 0);
             director_name_label.BackColor = Color.FromArgb(0, 0, 0, 0);
@@ -89,6 +92,27 @@ namespace prjkn
         }
 
         private void film_name_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Menu_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            list list = new list();
+            list.ShowDialog();
+            this.Close();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            account what = new account();
+            what.ShowDialog();
+            this.Close();
+        }
+
+        private void PanelBack_Paint(object sender, PaintEventArgs e)
         {
 
         }
