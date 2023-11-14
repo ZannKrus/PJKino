@@ -30,11 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search));
             PanelT = new Panel();
+            PanelBack = new Panel();
             Home_button = new Button();
             Search_button = new Button();
             Menu_button = new Button();
-            PanelBack = new Panel();
-            pictureBox1 = new PictureBox();
             PanelL = new Panel();
             checkBox17 = new CheckBox();
             checkBox16 = new CheckBox();
@@ -78,8 +77,6 @@
             Film11_label = new Label();
             Film12_label = new Label();
             PanelT.SuspendLayout();
-            PanelBack.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             PanelL.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Film1_pictureBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Film2_pictureBox).BeginInit();
@@ -97,15 +94,23 @@
             // 
             // PanelT
             // 
+            PanelT.Controls.Add(PanelBack);
             PanelT.Controls.Add(Home_button);
             PanelT.Controls.Add(Search_button);
             PanelT.Controls.Add(Menu_button);
-            PanelT.Controls.Add(PanelBack);
             PanelT.Dock = DockStyle.Top;
             PanelT.Location = new Point(0, 0);
             PanelT.Name = "PanelT";
             PanelT.Size = new Size(1134, 67);
             PanelT.TabIndex = 0;
+            // 
+            // PanelBack
+            // 
+            PanelBack.Location = new Point(1038, 4);
+            PanelBack.Name = "PanelBack";
+            PanelBack.Size = new Size(82, 59);
+            PanelBack.TabIndex = 3;
+            PanelBack.Click += PanelBack_Click;
             // 
             // Home_button
             // 
@@ -116,8 +121,9 @@
             Home_button.Location = new Point(107, 15);
             Home_button.Name = "Home_button";
             Home_button.Size = new Size(40, 40);
-            Home_button.TabIndex = 4;
+            Home_button.TabIndex = 2;
             Home_button.UseVisualStyleBackColor = true;
+            Home_button.Click += Home_button_Click;
             // 
             // Search_button
             // 
@@ -128,7 +134,7 @@
             Search_button.Location = new Point(61, 15);
             Search_button.Name = "Search_button";
             Search_button.Size = new Size(40, 40);
-            Search_button.TabIndex = 3;
+            Search_button.TabIndex = 1;
             Search_button.UseVisualStyleBackColor = true;
             // 
             // Menu_button
@@ -140,24 +146,9 @@
             Menu_button.Location = new Point(17, 15);
             Menu_button.Name = "Menu_button";
             Menu_button.Size = new Size(37, 40);
-            Menu_button.TabIndex = 2;
+            Menu_button.TabIndex = 0;
             Menu_button.UseVisualStyleBackColor = true;
-            // 
-            // PanelBack
-            // 
-            PanelBack.Controls.Add(pictureBox1);
-            PanelBack.Location = new Point(1023, 9);
-            PanelBack.Name = "PanelBack";
-            PanelBack.Size = new Size(85, 45);
-            PanelBack.TabIndex = 0;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(15, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(54, 45);
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            Menu_button.Click += Menu_button_Click;
             // 
             // PanelL
             // 
@@ -190,7 +181,7 @@
             checkBox17.BackColor = Color.Transparent;
             checkBox17.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox17.ForeColor = Color.White;
-            checkBox17.Location = new Point(3, 486);
+            checkBox17.Location = new Point(12, 484);
             checkBox17.Name = "checkBox17";
             checkBox17.Size = new Size(89, 23);
             checkBox17.TabIndex = 16;
@@ -203,7 +194,7 @@
             checkBox16.BackColor = Color.Transparent;
             checkBox16.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox16.ForeColor = Color.White;
-            checkBox16.Location = new Point(3, 456);
+            checkBox16.Location = new Point(12, 455);
             checkBox16.Name = "checkBox16";
             checkBox16.Size = new Size(111, 23);
             checkBox16.TabIndex = 15;
@@ -216,7 +207,7 @@
             checkBox15.BackColor = Color.Transparent;
             checkBox15.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox15.ForeColor = Color.White;
-            checkBox15.Location = new Point(3, 426);
+            checkBox15.Location = new Point(12, 426);
             checkBox15.Name = "checkBox15";
             checkBox15.Size = new Size(79, 23);
             checkBox15.TabIndex = 14;
@@ -229,7 +220,7 @@
             checkBox14.BackColor = Color.Transparent;
             checkBox14.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox14.ForeColor = Color.White;
-            checkBox14.Location = new Point(3, 396);
+            checkBox14.Location = new Point(12, 397);
             checkBox14.Name = "checkBox14";
             checkBox14.Size = new Size(87, 23);
             checkBox14.TabIndex = 13;
@@ -242,7 +233,7 @@
             checkBox13.BackColor = Color.Transparent;
             checkBox13.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox13.ForeColor = Color.White;
-            checkBox13.Location = new Point(3, 366);
+            checkBox13.Location = new Point(12, 368);
             checkBox13.Name = "checkBox13";
             checkBox13.Size = new Size(104, 23);
             checkBox13.TabIndex = 12;
@@ -255,7 +246,7 @@
             checkBox12.BackColor = Color.Transparent;
             checkBox12.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox12.ForeColor = Color.White;
-            checkBox12.Location = new Point(3, 336);
+            checkBox12.Location = new Point(12, 339);
             checkBox12.Name = "checkBox12";
             checkBox12.Size = new Size(128, 23);
             checkBox12.TabIndex = 11;
@@ -268,7 +259,7 @@
             checkBox11.BackColor = Color.Transparent;
             checkBox11.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox11.ForeColor = Color.White;
-            checkBox11.Location = new Point(3, 306);
+            checkBox11.Location = new Point(12, 310);
             checkBox11.Name = "checkBox11";
             checkBox11.Size = new Size(90, 23);
             checkBox11.TabIndex = 10;
@@ -281,7 +272,7 @@
             checkBox10.BackColor = Color.Transparent;
             checkBox10.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox10.ForeColor = Color.White;
-            checkBox10.Location = new Point(3, 276);
+            checkBox10.Location = new Point(12, 281);
             checkBox10.Name = "checkBox10";
             checkBox10.Size = new Size(121, 23);
             checkBox10.TabIndex = 9;
@@ -294,7 +285,7 @@
             checkBox9.BackColor = Color.Transparent;
             checkBox9.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox9.ForeColor = Color.White;
-            checkBox9.Location = new Point(3, 246);
+            checkBox9.Location = new Point(12, 252);
             checkBox9.Name = "checkBox9";
             checkBox9.Size = new Size(113, 23);
             checkBox9.TabIndex = 8;
@@ -307,7 +298,7 @@
             checkBox8.BackColor = Color.Transparent;
             checkBox8.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox8.ForeColor = Color.White;
-            checkBox8.Location = new Point(3, 216);
+            checkBox8.Location = new Point(12, 223);
             checkBox8.Name = "checkBox8";
             checkBox8.Size = new Size(100, 23);
             checkBox8.TabIndex = 7;
@@ -320,7 +311,7 @@
             checkBox7.BackColor = Color.Transparent;
             checkBox7.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox7.ForeColor = Color.White;
-            checkBox7.Location = new Point(3, 186);
+            checkBox7.Location = new Point(12, 194);
             checkBox7.Name = "checkBox7";
             checkBox7.Size = new Size(94, 23);
             checkBox7.TabIndex = 6;
@@ -333,7 +324,7 @@
             checkBox6.BackColor = Color.Transparent;
             checkBox6.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox6.ForeColor = Color.White;
-            checkBox6.Location = new Point(3, 156);
+            checkBox6.Location = new Point(12, 165);
             checkBox6.Name = "checkBox6";
             checkBox6.Size = new Size(91, 23);
             checkBox6.TabIndex = 5;
@@ -346,7 +337,7 @@
             checkBox5.BackColor = Color.Transparent;
             checkBox5.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox5.ForeColor = Color.White;
-            checkBox5.Location = new Point(3, 126);
+            checkBox5.Location = new Point(12, 136);
             checkBox5.Name = "checkBox5";
             checkBox5.Size = new Size(76, 23);
             checkBox5.TabIndex = 4;
@@ -359,7 +350,7 @@
             checkBox4.BackColor = Color.Transparent;
             checkBox4.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox4.ForeColor = Color.White;
-            checkBox4.Location = new Point(3, 96);
+            checkBox4.Location = new Point(12, 107);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(97, 23);
             checkBox4.TabIndex = 3;
@@ -372,7 +363,7 @@
             checkBox3.BackColor = Color.Transparent;
             checkBox3.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox3.ForeColor = Color.White;
-            checkBox3.Location = new Point(3, 66);
+            checkBox3.Location = new Point(12, 78);
             checkBox3.Name = "checkBox3";
             checkBox3.Size = new Size(94, 23);
             checkBox3.TabIndex = 2;
@@ -385,7 +376,7 @@
             checkBox2.BackColor = Color.Transparent;
             checkBox2.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox2.ForeColor = Color.White;
-            checkBox2.Location = new Point(3, 36);
+            checkBox2.Location = new Point(12, 49);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(89, 23);
             checkBox2.TabIndex = 1;
@@ -398,7 +389,7 @@
             checkBox1.BackColor = Color.Transparent;
             checkBox1.Font = new Font("Times New Roman", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
             checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(3, 6);
+            checkBox1.Location = new Point(12, 20);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(82, 23);
             checkBox1.TabIndex = 0;
@@ -682,8 +673,6 @@
             Text = "Search";
             Load += Search_Load;
             PanelT.ResumeLayout(false);
-            PanelBack.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             PanelL.ResumeLayout(false);
             PanelL.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)Film1_pictureBox).EndInit();
@@ -705,12 +694,11 @@
         #endregion
 
         private Panel PanelT;
-        private Panel PanelL;
-        private Button Search_button;
         private Button Menu_button;
-        private Panel PanelBack;
+        private Panel PanelL;
         private Button Home_button;
-        private PictureBox pictureBox1;
+        private Button Search_button;
+        private Panel PanelBack;
         private PictureBox Film1_pictureBox;
         private PictureBox Film2_pictureBox;
         private PictureBox Film3_pictureBox;
@@ -735,6 +723,7 @@
         private Label Film10_label;
         private Label Film11_label;
         private Label Film12_label;
+        private CheckBox checkBox1;
         private CheckBox checkBox17;
         private CheckBox checkBox16;
         private CheckBox checkBox15;
@@ -751,6 +740,5 @@
         private CheckBox checkBox4;
         private CheckBox checkBox3;
         private CheckBox checkBox2;
-        private CheckBox checkBox1;
     }
 }

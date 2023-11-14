@@ -9,12 +9,12 @@ namespace prjkn
 
         private void Welcum_Load(object sender, EventArgs e)
         {
-            //панели
+            //???
             PanelR.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelL.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelT.BackColor = Color.FromArgb(150, 100, 79, 47);
             PanelBack.BackColor = Color.FromArgb(75, 255, 255, 255);
-            //кнопки
+            //???
             Menu_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Search_Button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Menu_button.FlatAppearance.BorderSize = 0;

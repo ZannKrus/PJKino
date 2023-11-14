@@ -63,5 +63,13 @@ namespace prjkn
             wlc.ShowDialog();
             this.Close();
         }
+
+        private void Search_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Search search = new Search();
+            search.ShowDialog();
+            this.Close();
+        }
     }
 }

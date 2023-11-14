@@ -96,6 +96,14 @@ namespace prjkn
 
         }
 
+        private void Search_Button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Search search = new Search();
+            search.ShowDialog();
+            this.Close();
+        }
+
         private void Menu_button_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -104,17 +112,12 @@ namespace prjkn
             this.Close();
         }
 
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void PanelBack_Click(object sender, EventArgs e)
         {
             this.Hide();
-            account what = new account();
-            what.ShowDialog();
+            account acc = new account();
+            acc.ShowDialog();
             this.Close();
-        }
-
-        private void PanelBack_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }
