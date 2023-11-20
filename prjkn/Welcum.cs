@@ -93,5 +93,13 @@ namespace prjkn
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Log_in_and_Registration logreg = new Log_in_and_Registration();
+            logreg.ShowDialog();
+            this.Close();
+        }
     }
 }
