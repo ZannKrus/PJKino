@@ -76,7 +76,7 @@ namespace prjkn
         {
 
             this.Hide();
-            Film_Page frm = new Film_Page(this);
+            Film_Page frm = new Film_Page();
             frm.ShowDialog();
             this.Close();
         }

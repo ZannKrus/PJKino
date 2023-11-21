@@ -16,28 +16,28 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `directors`
+-- Table structure for table `accounts_films`
 --
 
-DROP TABLE IF EXISTS `directors`;
+DROP TABLE IF EXISTS `accounts_films`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `directors` (
+CREATE TABLE `accounts_films` (
   `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `last_name` varchar(255) NOT NULL,
-  `first_name` varchar(255) NOT NULL,
+  `accounts_id` bigint NOT NULL,
+  `films_id` bigint NOT NULL,
+  `film_rating` bigint NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `directors`
+-- Dumping data for table `accounts_films`
 --
 
-LOCK TABLES `directors` WRITE;
-/*!40000 ALTER TABLE `directors` DISABLE KEYS */;
-INSERT INTO `directors` VALUES (1,'Кэмерон','Джеймс'),(2,'Крэйвен','Уэс'),(3,'Рассел','Чак'),(4,'Росс','Гэри'),(5,'Фавро','Джон'),(6,'Леоне','Серджио'),(7,'Спилберг','Стивен'),(8,'Чаганти','Аниш'),(9,'Чейни','Ярроу'),(10,'Мосье','Скотт');
-/*!40000 ALTER TABLE `directors` ENABLE KEYS */;
+LOCK TABLES `accounts_films` WRITE;
+/*!40000 ALTER TABLE `accounts_films` DISABLE KEYS */;
+/*!40000 ALTER TABLE `accounts_films` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +49,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-11-14 22:17:39
+-- Dump completed on 2023-11-21 18:11:57
