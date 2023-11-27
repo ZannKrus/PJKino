@@ -1,6 +1,6 @@
 ﻿namespace prjkn
 {
-    partial class Registration
+    partial class Log_in
     {
         /// <summary>
         /// Required designer variable.
@@ -28,25 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registration));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Log_in));
             PanelT = new Panel();
             Home_button = new Button();
             Search_button = new Button();
             Menu_button = new Button();
             PanelL = new Panel();
             PanelR = new Panel();
-            label1 = new Label();
-            fn_textBox = new TextBox();
-            label2 = new Label();
-            ln_textBox = new TextBox();
             label3 = new Label();
             login_textBox = new TextBox();
-            label4 = new Label();
-            mail_textBox = new TextBox();
             label5 = new Label();
             pass_textBox = new TextBox();
-            Registration_button = new Button();
+            Log_in_button = new Button();
             pass_checkBox = new CheckBox();
+            exit_linkLabel = new LinkLabel();
             PanelT.SuspendLayout();
             SuspendLayout();
             // 
@@ -116,85 +111,25 @@
             PanelR.Size = new Size(139, 886);
             PanelR.TabIndex = 2;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(401, 134);
-            label1.Name = "label1";
-            label1.Size = new Size(261, 54);
-            label1.TabIndex = 3;
-            label1.Text = "Введите имя:";
-            // 
-            // fn_textBox
-            // 
-            fn_textBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            fn_textBox.Location = new Point(413, 191);
-            fn_textBox.Name = "fn_textBox";
-            fn_textBox.Size = new Size(645, 38);
-            fn_textBox.TabIndex = 4;
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(401, 261);
-            label2.Name = "label2";
-            label2.Size = new Size(365, 54);
-            label2.TabIndex = 5;
-            label2.Text = "Введите фамилию:";
-            // 
-            // ln_textBox
-            // 
-            ln_textBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            ln_textBox.Location = new Point(413, 318);
-            ln_textBox.Name = "ln_textBox";
-            ln_textBox.Size = new Size(645, 38);
-            ln_textBox.TabIndex = 6;
-            // 
             // label3
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(401, 388);
+            label3.Location = new Point(371, 363);
             label3.Name = "label3";
-            label3.Size = new Size(295, 54);
-            label3.TabIndex = 7;
-            label3.Text = "Введите логин:";
+            label3.Size = new Size(143, 54);
+            label3.TabIndex = 8;
+            label3.Text = "Логин:";
             // 
             // login_textBox
             // 
             login_textBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            login_textBox.Location = new Point(413, 445);
+            login_textBox.Location = new Point(520, 378);
             login_textBox.Name = "login_textBox";
             login_textBox.Size = new Size(645, 38);
-            login_textBox.TabIndex = 8;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(401, 515);
-            label4.Name = "label4";
-            label4.Size = new Size(294, 54);
-            label4.TabIndex = 9;
-            label4.Text = "Введите почту:";
-            // 
-            // mail_textBox
-            // 
-            mail_textBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            mail_textBox.Location = new Point(413, 572);
-            mail_textBox.Name = "mail_textBox";
-            mail_textBox.Size = new Size(645, 38);
-            mail_textBox.TabIndex = 10;
+            login_textBox.TabIndex = 9;
             // 
             // label5
             // 
@@ -202,31 +137,31 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(401, 635);
+            label5.Location = new Point(345, 432);
             label5.Name = "label5";
-            label5.Size = new Size(321, 54);
-            label5.TabIndex = 11;
-            label5.Text = "Введите пароль:";
+            label5.Size = new Size(169, 54);
+            label5.TabIndex = 12;
+            label5.Text = "Пароль:";
             // 
             // pass_textBox
             // 
             pass_textBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            pass_textBox.Location = new Point(413, 692);
+            pass_textBox.Location = new Point(520, 448);
             pass_textBox.Name = "pass_textBox";
             pass_textBox.Size = new Size(645, 38);
-            pass_textBox.TabIndex = 12;
+            pass_textBox.TabIndex = 13;
             pass_textBox.UseSystemPasswordChar = true;
             // 
-            // Registration_button
+            // Log_in_button
             // 
-            Registration_button.BackColor = Color.White;
-            Registration_button.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            Registration_button.Location = new Point(657, 818);
-            Registration_button.Name = "Registration_button";
-            Registration_button.Size = new Size(401, 63);
-            Registration_button.TabIndex = 13;
-            Registration_button.Text = "Зарегистрироваться";
-            Registration_button.UseVisualStyleBackColor = false;
+            Log_in_button.BackColor = Color.White;
+            Log_in_button.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            Log_in_button.Location = new Point(965, 579);
+            Log_in_button.Name = "Log_in_button";
+            Log_in_button.Size = new Size(200, 60);
+            Log_in_button.TabIndex = 14;
+            Log_in_button.Text = "Войти";
+            Log_in_button.UseVisualStyleBackColor = false;
             // 
             // pass_checkBox
             // 
@@ -234,41 +169,52 @@
             pass_checkBox.BackColor = Color.Transparent;
             pass_checkBox.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
             pass_checkBox.ForeColor = Color.White;
-            pass_checkBox.Location = new Point(845, 736);
+            pass_checkBox.Location = new Point(952, 492);
             pass_checkBox.Name = "pass_checkBox";
             pass_checkBox.Size = new Size(213, 35);
-            pass_checkBox.TabIndex = 16;
+            pass_checkBox.TabIndex = 15;
             pass_checkBox.Text = "Показать пароль";
             pass_checkBox.UseVisualStyleBackColor = false;
             pass_checkBox.CheckedChanged += pass_checkBox_CheckedChanged;
             // 
-            // Registration
+            // exit_linkLabel
+            // 
+            exit_linkLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            exit_linkLabel.AutoSize = true;
+            exit_linkLabel.BackColor = Color.Transparent;
+            exit_linkLabel.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            exit_linkLabel.LinkColor = Color.Red;
+            exit_linkLabel.Location = new Point(1233, 890);
+            exit_linkLabel.Name = "exit_linkLabel";
+            exit_linkLabel.Size = new Size(131, 54);
+            exit_linkLabel.TabIndex = 16;
+            exit_linkLabel.TabStop = true;
+            exit_linkLabel.Text = "Назад";
+            exit_linkLabel.VisitedLinkColor = Color.Red;
+            exit_linkLabel.LinkClicked += exit_linkLabel_LinkClicked;
+            // 
+            // Log_in
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1514, 953);
+            Controls.Add(exit_linkLabel);
             Controls.Add(pass_checkBox);
-            Controls.Add(Registration_button);
+            Controls.Add(Log_in_button);
             Controls.Add(pass_textBox);
             Controls.Add(label5);
-            Controls.Add(mail_textBox);
-            Controls.Add(label4);
             Controls.Add(login_textBox);
             Controls.Add(label3);
-            Controls.Add(ln_textBox);
-            Controls.Add(label2);
-            Controls.Add(fn_textBox);
-            Controls.Add(label1);
             Controls.Add(PanelR);
             Controls.Add(PanelL);
             Controls.Add(PanelT);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
-            Name = "Registration";
-            Text = "Registration";
-            Load += Registration_Load;
+            Name = "Log_in";
+            Text = "Log_in";
+            Load += Log_in_Load;
             PanelT.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -282,17 +228,12 @@
         private Button Menu_button;
         private Button Search_button;
         private Button Home_button;
-        private Label label1;
-        private TextBox fn_textBox;
-        private Label label2;
-        private TextBox ln_textBox;
         private Label label3;
         private TextBox login_textBox;
-        private Label label4;
-        private TextBox mail_textBox;
         private Label label5;
         private TextBox pass_textBox;
-        private Button Registration_button;
+        private Button Log_in_button;
         private CheckBox pass_checkBox;
+        private LinkLabel exit_linkLabel;
     }
 }

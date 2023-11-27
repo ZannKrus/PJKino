@@ -58,5 +58,13 @@ namespace prjkn
             wlc.ShowDialog();
             this.Close();
         }
+
+        private void Log_in_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Log_in log = new Log_in();
+            log.ShowDialog();
+            this.Close();
+        }
     }
 }

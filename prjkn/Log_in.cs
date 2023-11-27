@@ -10,15 +10,15 @@ using System.Windows.Forms;
 
 namespace prjkn
 {
-    public partial class Registration : Form
+    public partial class Log_in : Form
     {
-        public Registration()
+        public Log_in()
         {
             InitializeComponent();
             pass_textBox.UseSystemPasswordChar = true;
         }
 
-        private void Registration_Load(object sender, EventArgs e)
+        private void Log_in_Load(object sender, EventArgs e)
         {
             PanelR.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelL.BackColor = Color.FromArgb(100, 0, 0, 0);
@@ -62,6 +62,14 @@ namespace prjkn
             {
                 pass_textBox.UseSystemPasswordChar = true;
             }
+        }
+
+        private void exit_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            Log_in_and_Registration lnr = new Log_in_and_Registration();
+            lnr.ShowDialog();
+            this.Close();
         }
     }
 }

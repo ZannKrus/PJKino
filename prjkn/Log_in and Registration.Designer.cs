@@ -128,6 +128,7 @@
             Log_in_button.TabIndex = 15;
             Log_in_button.Text = "Войти";
             Log_in_button.UseVisualStyleBackColor = false;
+            Log_in_button.Click += Log_in_button_Click;
             // 
             // Log_in_and_Registration
             // 
@@ -141,6 +142,8 @@
             Controls.Add(PanelR);
             Controls.Add(PanelL);
             Controls.Add(PanelT);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "Log_in_and_Registration";
             Text = "Log_in_and_Registration";
             Load += Log_in_and_Registration_Load;
