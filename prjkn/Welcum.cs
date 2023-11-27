@@ -101,5 +101,13 @@ namespace prjkn
             logreg.ShowDialog();
             this.Close();
         }
+
+        private void admin_button_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            admin ad = new admin();
+            ad.ShowDialog();
+            this.Close();
+        }
     }
 }

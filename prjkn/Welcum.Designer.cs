@@ -40,6 +40,7 @@
             Greet_text = new Label();
             button1 = new Button();
             button2 = new Button();
+            admin_button = new Button();
             PanelT.SuspendLayout();
             PanelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -177,6 +178,16 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
+            // admin_button
+            // 
+            admin_button.Location = new Point(462, 528);
+            admin_button.Name = "admin_button";
+            admin_button.Size = new Size(131, 29);
+            admin_button.TabIndex = 8;
+            admin_button.Text = "Администратор";
+            admin_button.UseVisualStyleBackColor = true;
+            admin_button.Click += admin_button_Click;
+            // 
             // Welcum
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -184,6 +195,7 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1134, 676);
+            Controls.Add(admin_button);
             Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(Greet_text);
@@ -212,5 +224,6 @@
         private Button button1;
         private Button Home_button;
         private Button button2;
+        private Button admin_button;
     }
 }
