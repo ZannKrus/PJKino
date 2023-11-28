@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -58,6 +59,21 @@ namespace prjkn
             account acc = new account();
             acc.ShowDialog();
             this.Close();
+        }
+
+        private static string query_text;
+
+        private void query_textBox_TextChanged(object sender, EventArgs e)
+        {
+            query_text = query_textBox.Text;
+        }
+        MySqlConnection conn = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=andk_MYSQL_37;database=new_schema");
+        private void Execute_b_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand(query_text, conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
         }
     }
 }

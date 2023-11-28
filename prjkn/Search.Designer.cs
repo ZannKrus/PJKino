@@ -37,6 +37,8 @@
             listView1 = new ListView();
             listView2 = new ListView();
             panel1 = new Panel();
+            page_f = new Button();
+            page_b = new Button();
             PanelT.SuspendLayout();
             SuspendLayout();
             // 
@@ -108,10 +110,10 @@
             // 
             listView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             listView1.BackColor = Color.Black;
-            listView1.Location = new Point(131, 55);
+            listView1.Location = new Point(143, 55);
             listView1.Margin = new Padding(122, 3, 3, 3);
             listView1.Name = "listView1";
-            listView1.Size = new Size(1008, 655);
+            listView1.Size = new Size(973, 638);
             listView1.TabIndex = 2;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.Click += listView1_Click;
@@ -137,6 +139,28 @@
             panel1.Size = new Size(122, 672);
             panel1.TabIndex = 4;
             // 
+            // page_f
+            // 
+            page_f.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            page_f.Location = new Point(1041, 670);
+            page_f.Name = "page_f";
+            page_f.Size = new Size(75, 23);
+            page_f.TabIndex = 5;
+            page_f.Text = "Вперед";
+            page_f.UseVisualStyleBackColor = true;
+            page_f.Click += page_f_Click;
+            // 
+            // page_b
+            // 
+            page_b.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            page_b.Location = new Point(143, 670);
+            page_b.Name = "page_b";
+            page_b.Size = new Size(75, 23);
+            page_b.TabIndex = 6;
+            page_b.Text = "Назад";
+            page_b.UseVisualStyleBackColor = true;
+            page_b.Click += page_b_Click;
+            // 
             // Search
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -144,6 +168,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1267, 722);
+            Controls.Add(page_b);
+            Controls.Add(page_f);
             Controls.Add(panel1);
             Controls.Add(listView2);
             Controls.Add(listView1);
@@ -166,5 +192,7 @@
         private ListView listView1;
         private ListView listView2;
         private Panel panel1;
+        private Button page_f;
+        private Button page_b;
     }
 }

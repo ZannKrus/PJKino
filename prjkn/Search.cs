@@ -30,35 +30,19 @@ namespace prjkn
             Home_button.BackColor = Color.FromArgb(0, 100, 79, 47);
 
 
+            if (offset == 1)
+            {
+                page_b.Enabled = false;
+                page_b.Visible = false;
+
+            }
+            else
+            {
+                page_b.Enabled = true;
+                page_b.Visible = true;
+            }
+            listview_Load();
             conn.Open();
-            MySqlCommand cmd0 = new MySqlCommand("SELECT * FROM new_schema.films", conn);
-            List<string> data = new List<string>();
-            MySqlDataReader dr = cmd0.ExecuteReader();
-            while (dr.Read())
-            {
-                data.Add(dr["image_url"].ToString());
-            }
-            dr.Close();
-
-            listView1.Items.Clear();
-            ImageList list = new ImageList();
-            list.ImageSize = new Size(144, 256);
-            list.ColorDepth = ColorDepth.Depth32Bit;
-            for (int i = 0; i < data.Count; i++)
-            {
-                String s = String.Concat("..\\..\\..\\..\\", data[i].ToString());
-                Debug.WriteLine(s);
-                list.Images.Add(new Bitmap(s));
-            }
-
-            listView1.LargeImageList = list;
-            for (int i = 0; i < data.Count; i++)
-            {
-                ListViewItem listViewItem = new ListViewItem();
-                listViewItem.ImageIndex = i;
-                listView1.Items.Add(listViewItem);
-            }
-            /////////////////////////////////////////////////////////////////////////////////////
             listView2.CheckBoxes = true;
 
             MySqlCommand cmd1 = new MySqlCommand("SELECT * FROM new_schema.genres", conn);
@@ -74,6 +58,51 @@ namespace prjkn
             {
 
                 listView2.Items.Add(genre_data[i]);
+            }
+            conn.Close();
+        }
+        private void listview_Load()
+        {
+            conn.Open();
+            MySqlCommand cmd0 = new MySqlCommand($"SELECT * FROM new_schema.films LIMIT {5 * (offset - 1)}, {5 * offset}", conn);
+            List<string> data = new List<string>();
+            MySqlDataReader dr = cmd0.ExecuteReader();
+            while (dr.Read())
+            {
+                data.Add(dr["image_url"].ToString());
+            }
+            dr.Close();
+
+            listView1.Items.Clear();
+            ImageList list = new ImageList();
+            list.ImageSize = new Size(144, 256);
+            list.ColorDepth = ColorDepth.Depth32Bit;
+            for (int i = 0; i < data.Count; i++)
+            {
+                String s = String.Concat("..\\..\\..\\..\\", data[i].ToString());
+                //Debug.WriteLine(s);
+                list.Images.Add(new Bitmap(s));
+            }
+
+            listView1.LargeImageList = list;
+            for (int i = 0; i < data.Count; i++)
+            {
+                ListViewItem listViewItem = new ListViewItem();
+                listViewItem.ImageIndex = i;
+                listView1.Items.Add(listViewItem);
+            }
+
+            MySqlCommand cmd1 = new MySqlCommand($"SELECT COUNT(*) FROM new_schema.films", conn);
+            //Debug.WriteLine(Convert.ToInt32(cmd1.ExecuteScalar()));
+            if (Convert.ToInt32(cmd1.ExecuteScalar()) - offset * 5 <= 0)
+            {
+                page_f.Enabled = false;
+                page_f.Visible = false;
+            }
+            else
+            {
+                page_f.Enabled = true;
+                page_f.Visible = true;
             }
             conn.Close();
         }
@@ -113,6 +142,53 @@ namespace prjkn
         private void listView1_Click(object sender, EventArgs e)
         {
             current_film_i = listView1.SelectedIndices[0];
+        }
+        public static int offset = 1;
+        private void page_f_Click(object sender, EventArgs e)
+        {
+            offset++;
+            if (offset == 1)
+            {
+                page_b.Enabled = false;
+                page_b.Visible = false;
+
+            }
+            else
+            {
+                page_b.Enabled = true;
+                page_b.Visible = true;
+            }
+            conn.Open();
+            MySqlCommand cmd0 = new MySqlCommand($"SELECT COUNT(*) FROM new_schema.films", conn);
+            if (Convert.ToInt32(cmd0.ExecuteScalar()) - offset * 5 <= 0) 
+            {
+                page_f.Enabled = false;
+                page_f.Visible = false;
+            }
+            else
+            {
+                page_f.Enabled = true;
+                page_f.Visible = true;
+            }
+            conn.Close();
+            listview_Load();
+        }
+
+        private void page_b_Click(object sender, EventArgs e)
+        {
+            offset--;
+            if (offset == 1)
+            {
+                page_b.Enabled = false;
+                page_b.Visible = false;
+
+            }
+            else
+            {
+                page_b.Enabled = true;
+                page_b.Visible = true;
+            }
+            listview_Load(); 
         }
     }
 }

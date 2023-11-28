@@ -17,14 +17,23 @@ namespace prjkn
             //???
             Menu_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Search_Button.BackColor = Color.FromArgb(0, 100, 79, 47);
+
             Menu_button.FlatAppearance.BorderSize = 0;
             Menu_button.FlatStyle = FlatStyle.Flat;
+
             Search_Button.FlatAppearance.BorderSize = 0;
             Search_Button.FlatStyle = FlatStyle.Flat;
+
             Greet_text.BackColor = Color.FromArgb(0, 255, 255, 255);
+
             Home_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Home_button.FlatAppearance.BorderSize = 0;
             Home_button.FlatStyle = FlatStyle.Flat;
+
+            admin_b.BackColor = Color.FromArgb(0, 100, 79, 47);
+            admin_b.FlatAppearance.BorderSize = 0;
+            admin_b.FlatStyle = FlatStyle.Flat;
+
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
             gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
             Region rg = new Region(gp);
@@ -102,7 +111,7 @@ namespace prjkn
             this.Close();
         }
 
-        private void admin_button_Click(object sender, EventArgs e)
+        private void admin_b_Click(object sender, EventArgs e)
         {
             this.Hide();
             admin ad = new admin();
