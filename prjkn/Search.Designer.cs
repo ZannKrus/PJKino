@@ -174,9 +174,10 @@
             Controls.Add(listView2);
             Controls.Add(listView1);
             Controls.Add(PanelT);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "Search";
-            Text = "Search";
+            Text = "Поиск";
             Load += Search_Load;
             PanelT.ResumeLayout(false);
             ResumeLayout(false);

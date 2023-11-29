@@ -157,6 +157,7 @@
             Controls.Add(PanelR);
             Controls.Add(PanelL);
             Controls.Add(PanelT);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Margin = new Padding(3, 2, 3, 2);
             Name = "admin";
             Text = "admin";

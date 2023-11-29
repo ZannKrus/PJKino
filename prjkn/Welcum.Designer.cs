@@ -39,9 +39,7 @@
             PanelR = new Panel();
             PanelL = new Panel();
             Greet_text = new Label();
-            button1 = new Button();
             button2 = new Button();
-            admin_button = new Button();
             PanelT.SuspendLayout();
             PanelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -57,7 +55,7 @@
             PanelT.Dock = DockStyle.Top;
             PanelT.Location = new Point(0, 0);
             PanelT.Name = "PanelT";
-            PanelT.Size = new Size(992, 50);
+            PanelT.Size = new Size(1267, 50);
             PanelT.TabIndex = 2;
             PanelT.Paint += panel2_Paint;
             // 
@@ -67,7 +65,7 @@
             admin_b.BackColor = Color.Transparent;
             admin_b.BackgroundImage = Properties.Resources.wrench;
             admin_b.BackgroundImageLayout = ImageLayout.Stretch;
-            admin_b.Location = new Point(867, 11);
+            admin_b.Location = new Point(1142, 11);
             admin_b.Name = "admin_b";
             admin_b.Size = new Size(35, 30);
             admin_b.TabIndex = 9;
@@ -91,7 +89,7 @@
             PanelBack.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             PanelBack.BackgroundImageLayout = ImageLayout.Stretch;
             PanelBack.Controls.Add(pictureBox1);
-            PanelBack.Location = new Point(908, 3);
+            PanelBack.Location = new Point(1183, 3);
             PanelBack.Name = "PanelBack";
             PanelBack.Size = new Size(72, 44);
             PanelBack.TabIndex = 2;
@@ -136,9 +134,9 @@
             // 
             PanelR.BackColor = Color.White;
             PanelR.Dock = DockStyle.Right;
-            PanelR.Location = new Point(870, 50);
+            PanelR.Location = new Point(1145, 50);
             PanelR.Name = "PanelR";
-            PanelR.Size = new Size(122, 457);
+            PanelR.Size = new Size(122, 672);
             PanelR.TabIndex = 3;
             PanelR.Paint += panel3_Paint;
             // 
@@ -147,7 +145,7 @@
             PanelL.Dock = DockStyle.Left;
             PanelL.Location = new Point(0, 50);
             PanelL.Name = "PanelL";
-            PanelL.Size = new Size(122, 457);
+            PanelL.Size = new Size(122, 672);
             PanelL.TabIndex = 4;
             PanelL.Paint += panel4_Paint;
             // 
@@ -156,23 +154,13 @@
             Greet_text.Anchor = AnchorStyles.None;
             Greet_text.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point);
             Greet_text.ForeColor = Color.White;
-            Greet_text.Location = new Point(235, 203);
+            Greet_text.Location = new Point(372, 311);
             Greet_text.Name = "Greet_text";
             Greet_text.Size = new Size(520, 55);
             Greet_text.TabIndex = 5;
             Greet_text.Text = "Добро пожаловать,  WIP";
             Greet_text.TextAlign = ContentAlignment.MiddleCenter;
             Greet_text.Click += Greet_text_Click;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(556, 396);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 6;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // button2
             // 
@@ -185,32 +173,21 @@
             button2.UseVisualStyleBackColor = true;
             button2.Click += button2_Click;
             // 
-            // admin_button
-            // 
-            admin_button.Location = new Point(404, 396);
-            admin_button.Margin = new Padding(3, 2, 3, 2);
-            admin_button.Name = "admin_button";
-            admin_button.Size = new Size(115, 22);
-            admin_button.TabIndex = 8;
-            admin_button.Text = "Администратор";
-            admin_button.UseVisualStyleBackColor = true;
-            // 
             // Welcum
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(992, 507);
-            Controls.Add(admin_button);
+            ClientSize = new Size(1267, 722);
             Controls.Add(button2);
-            Controls.Add(button1);
             Controls.Add(Greet_text);
             Controls.Add(PanelL);
             Controls.Add(PanelR);
             Controls.Add(PanelT);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Welcum";
-            Text = "Form1";
+            Text = "КиноНепоиск";
             Load += Welcum_Load;
             PanelT.ResumeLayout(false);
             PanelBack.ResumeLayout(false);
@@ -227,10 +204,8 @@
         private Panel PanelBack;
         private PictureBox pictureBox1;
         private Label Greet_text;
-        private Button button1;
         private Button Home_button;
         private Button button2;
-        private Button admin_button;
         private Button admin_b;
     }
 }

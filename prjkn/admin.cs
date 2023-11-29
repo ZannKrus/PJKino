@@ -67,7 +67,7 @@ namespace prjkn
         {
             query_text = query_textBox.Text;
         }
-        MySqlConnection conn = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=andk_MYSQL_37;database=new_schema");
+        MySqlConnection conn = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=qwerty123456;database=new_schema");
         private void Execute_b_Click(object sender, EventArgs e)
         {
             conn.Open();

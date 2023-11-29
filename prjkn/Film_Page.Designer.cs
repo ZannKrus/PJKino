@@ -260,6 +260,7 @@
             Controls.Add(PanelL);
             Controls.Add(PanelR);
             Controls.Add(PanelT);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Film_Page";
             Text = "Film_Page";
             Load += Film_Page_Load;

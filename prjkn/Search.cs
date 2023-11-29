@@ -19,7 +19,7 @@ namespace prjkn
         {
             InitializeComponent();
         }
-        MySqlConnection conn = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=andk_MYSQL_37;database=new_schema");
+        MySqlConnection conn = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=qwerty123456;database=new_schema");
         private void Search_Load(object sender, EventArgs e)
         {
             PanelT.BackColor = Color.FromArgb(150, 100, 79, 47);
@@ -160,7 +160,7 @@ namespace prjkn
             }
             conn.Open();
             MySqlCommand cmd0 = new MySqlCommand($"SELECT COUNT(*) FROM new_schema.films", conn);
-            if (Convert.ToInt32(cmd0.ExecuteScalar()) - offset * 5 <= 0) 
+            if (Convert.ToInt32(cmd0.ExecuteScalar()) - offset * 5 <= 0)
             {
                 page_f.Enabled = false;
                 page_f.Visible = false;
@@ -188,7 +188,7 @@ namespace prjkn
                 page_b.Enabled = true;
                 page_b.Visible = true;
             }
-            listview_Load(); 
+            listview_Load();
         }
     }
 }
