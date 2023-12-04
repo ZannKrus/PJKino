@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace prjkn
             InitializeComponent();
             pass_textBox.UseSystemPasswordChar = true;
         }
+        MySqlConnection conn = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=qwerty123456;database=new_schema");
 
         private void Log_in_Load(object sender, EventArgs e)
         {
@@ -64,12 +66,59 @@ namespace prjkn
             }
         }
 
-        private void exit_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void Log_in_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Log_in_and_Registration lnr = new Log_in_and_Registration();
-            lnr.ShowDialog();
-            this.Close();
+            String loginUser = login_textBox.Text;
+            String passUser = pass_textBox.Text;
+
+            try
+            {
+                if (login_textBox.Text == "")
+                {
+                    MessageBox.Show("Введите логин");
+                    return;
+                }
+
+                if (pass_textBox.Text == "")
+                {
+                    MessageBox.Show("Введите пароль");
+                    return;
+                }
+
+                String querry = "SELECT * FROM accounts WHERE Binary nickname = '"+login_textBox.Text+ "' AND Binary password = '"+ pass_textBox.Text +"'";
+                MySqlDataAdapter sda = new MySqlDataAdapter(querry, conn);
+
+                DataTable dTable = new DataTable();
+                sda.Fill(dTable);
+
+                if(dTable.Rows.Count > 0)
+                {
+                    loginUser = login_textBox.Text;
+                    passUser = pass_textBox.Text;
+
+                    this.Hide();
+                    Welcum wlc = new Welcum();
+                    wlc.ShowDialog();
+                    this.Close();
+                }
+
+                else
+                {
+                    MessageBox.Show("Неверные учетные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    login_textBox.Clear();
+                    pass_textBox.Clear();
+
+                    login_textBox.Focus();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка");
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
