@@ -65,11 +65,16 @@ namespace prjkn
                 pass_textBox.UseSystemPasswordChar = true;
             }
         }
-
+        public static String loginUser;
+        public static String passUser;
+        public static String firstNameUser;
+        public static String lastNameUser;
+        public static String mailUser;
+        public static bool is_log = false;
         private void Log_in_button_Click(object sender, EventArgs e)
         {
-            String loginUser = login_textBox.Text;
-            String passUser = pass_textBox.Text;
+            loginUser = login_textBox.Text;
+            passUser = pass_textBox.Text;
 
             try
             {
@@ -96,6 +101,14 @@ namespace prjkn
                     loginUser = login_textBox.Text;
                     passUser = pass_textBox.Text;
 
+                    is_log = true;
+
+                    foreach (DataRow row in dTable.Rows)
+                    {
+                        firstNameUser = row["first_name"].ToString();
+                        lastNameUser = row["last_name"].ToString();
+                        mailUser = row["Email"].ToString();
+                    }
                     this.Hide();
                     Welcum wlc = new Welcum();
                     wlc.ShowDialog();

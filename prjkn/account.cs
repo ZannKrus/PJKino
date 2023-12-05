@@ -45,6 +45,14 @@ namespace prjkn
             Home_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Home_button.FlatAppearance.BorderSize = 0;
             Home_button.FlatStyle = FlatStyle.Flat;
+
+            if(Log_in.is_log == true)
+            {
+                firstname_label.Text = "Имя: " + Log_in.firstNameUser;
+                lastname_label.Text = "Фамилия: " + Log_in.lastNameUser;
+                login_label.Text = "Логин: " + Log_in.loginUser;
+                mail_label.Text = "Почта: " + Log_in.mailUser;
+            }
         }
 
         private void Menu_button_Click(object sender, EventArgs e)
@@ -68,6 +76,15 @@ namespace prjkn
             this.Hide();
             Search search = new Search();
             search.ShowDialog();
+            this.Close();
+        }
+
+        private void exit_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Log_in.is_log = false;
+            this.Hide();
+            Welcum wlc = new Welcum();
+            wlc.ShowDialog();
             this.Close();
         }
     }

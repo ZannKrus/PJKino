@@ -188,6 +188,7 @@
             exit_linkLabel.TabStop = true;
             exit_linkLabel.Text = "Выйти";
             exit_linkLabel.VisitedLinkColor = Color.Red;
+            exit_linkLabel.LinkClicked += exit_linkLabel_LinkClicked;
             // 
             // account
             // 

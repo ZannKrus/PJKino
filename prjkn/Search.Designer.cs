@@ -39,6 +39,9 @@
             panel1 = new Panel();
             page_f = new Button();
             page_b = new Button();
+            page_text = new Label();
+            search_textBox = new TextBox();
+            button_search = new Button();
             PanelT.SuspendLayout();
             SuspendLayout();
             // 
@@ -122,10 +125,9 @@
             // listView2
             // 
             listView2.BackColor = Color.DimGray;
-            listView2.Dock = DockStyle.Left;
             listView2.Location = new Point(0, 50);
             listView2.Name = "listView2";
-            listView2.Size = new Size(122, 672);
+            listView2.Size = new Size(122, 615);
             listView2.TabIndex = 3;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.List;
@@ -161,6 +163,36 @@
             page_b.UseVisualStyleBackColor = true;
             page_b.Click += page_b_Click;
             // 
+            // page_text
+            // 
+            page_text.AutoSize = true;
+            page_text.BackColor = Color.Transparent;
+            page_text.Font = new Font("Segoe UI", 20.25F, FontStyle.Regular, GraphicsUnit.Point);
+            page_text.ForeColor = Color.White;
+            page_text.Location = new Point(576, 656);
+            page_text.Name = "page_text";
+            page_text.Size = new Size(90, 37);
+            page_text.TabIndex = 7;
+            page_text.Text = "label1";
+            // 
+            // search_textBox
+            // 
+            search_textBox.Location = new Point(0, 671);
+            search_textBox.Name = "search_textBox";
+            search_textBox.Size = new Size(122, 23);
+            search_textBox.TabIndex = 8;
+            search_textBox.TextChanged += search_textBox_TextChanged;
+            // 
+            // button_search
+            // 
+            button_search.Location = new Point(0, 699);
+            button_search.Name = "button_search";
+            button_search.Size = new Size(122, 23);
+            button_search.TabIndex = 9;
+            button_search.Text = "Поиск";
+            button_search.UseVisualStyleBackColor = true;
+            button_search.Click += button_search_Click;
+            // 
             // Search
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -168,6 +200,9 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1267, 722);
+            Controls.Add(button_search);
+            Controls.Add(search_textBox);
+            Controls.Add(page_text);
             Controls.Add(page_b);
             Controls.Add(page_f);
             Controls.Add(panel1);
@@ -181,6 +216,7 @@
             Load += Search_Load;
             PanelT.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -195,5 +231,8 @@
         private Panel panel1;
         private Button page_f;
         private Button page_b;
+        private Label page_text;
+        private TextBox search_textBox;
+        private Button button_search;
     }
 }

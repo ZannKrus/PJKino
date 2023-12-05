@@ -46,6 +46,8 @@
             panel1 = new Panel();
             description_label = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
+            comboBox1 = new ComboBox();
+            comboBox2 = new ComboBox();
             PanelT.SuspendLayout();
             PanelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -246,6 +248,32 @@
             flowLayoutPanel1.Size = new Size(668, 297);
             flowLayoutPanel1.TabIndex = 22;
             // 
+            // comboBox1
+            // 
+            comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "", "★ 10", "★ 9", "★ 8", "★ 7", "★ 6", "★ 5", "★ 4", "★ 3", "★ 2", "★ 1" });
+            comboBox1.Location = new Point(344, 512);
+            comboBox1.MaxDropDownItems = 10;
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(84, 40);
+            comboBox1.TabIndex = 23;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
+            // 
+            // comboBox2
+            // 
+            comboBox2.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox2.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBox2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "", "Любимое", "Просмотрено", "В планах", "Неинтересен" });
+            comboBox2.Location = new Point(128, 512);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(210, 40);
+            comboBox2.TabIndex = 24;
+            comboBox2.SelectedIndexChanged += comboBox2_SelectedIndexChanged;
+            // 
             // Film_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -253,6 +281,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1491, 835);
+            Controls.Add(comboBox2);
+            Controls.Add(comboBox1);
             Controls.Add(flowLayoutPanel1);
             Controls.Add(panel1);
             Controls.Add(film_name);
@@ -296,5 +326,7 @@
         private Panel panel1;
         private Label description_label;
         private FlowLayoutPanel flowLayoutPanel1;
+        private ComboBox comboBox1;
+        private ComboBox comboBox2;
     }
 }

@@ -38,6 +38,22 @@ namespace prjkn
             gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
             Region rg = new Region(gp);
             pictureBox1.Region = rg;
+
+            if (Log_in.is_log == true && Log_in.loginUser == "admin")
+            {
+                admin_b.Visible = true;
+                admin_b.Enabled = true;
+            }
+            else
+            {
+                admin_b.Visible = false;
+                admin_b.Enabled = false;
+            }
+
+            if (Log_in.is_log)
+            {
+                Greet_text.Text = $"Добро пожаловать, {Log_in.firstNameUser}";
+            }
         }
 
         private void panel3_Paint(object sender, PaintEventArgs e)
@@ -81,21 +97,22 @@ namespace prjkn
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-            this.Hide();
-            Film_Page frm = new Film_Page();
-            frm.ShowDialog();
-            this.Close();
-        }
-
         private void PanelBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            account acc = new account();
-            acc.ShowDialog();
-            this.Close();
+            if (Log_in.is_log == true)
+            {
+                this.Hide();
+                account acc = new account();
+                acc.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Hide();
+                Log_in_and_Registration logreg = new Log_in_and_Registration();
+                logreg.ShowDialog();
+                this.Close();
+            }
         }
 
         private void Home_button_Click(object sender, EventArgs e)

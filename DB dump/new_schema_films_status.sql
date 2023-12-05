@@ -16,28 +16,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `films_directors`
+-- Table structure for table `films_status`
 --
 
-DROP TABLE IF EXISTS `films_directors`;
+DROP TABLE IF EXISTS `films_status`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `films_directors` (
-  `id` bigint unsigned NOT NULL AUTO_INCREMENT,
-  `films_id` bigint NOT NULL,
-  `directors_id` bigint NOT NULL,
+CREATE TABLE `films_status` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `status_name` varchar(45) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `films_directors`
+-- Dumping data for table `films_status`
 --
 
-LOCK TABLES `films_directors` WRITE;
-/*!40000 ALTER TABLE `films_directors` DISABLE KEYS */;
-INSERT INTO `films_directors` VALUES (1,1,1),(2,2,2),(3,3,3),(4,4,4),(5,5,5),(6,6,6),(7,7,1),(8,8,7),(9,9,8),(10,10,9),(11,10,10);
-/*!40000 ALTER TABLE `films_directors` ENABLE KEYS */;
+LOCK TABLES `films_status` WRITE;
+/*!40000 ALTER TABLE `films_status` DISABLE KEYS */;
+INSERT INTO `films_status` VALUES (1,'Любимое'),(2,'Просмотрено'),(3,'В планах'),(4,'Неинтересен');
+/*!40000 ALTER TABLE `films_status` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -49,4 +48,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-05 23:36:47
+-- Dump completed on 2023-12-05 23:36:48

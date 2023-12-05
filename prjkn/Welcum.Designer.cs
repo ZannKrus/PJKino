@@ -151,20 +151,20 @@
             // 
             // Greet_text
             // 
-            Greet_text.Anchor = AnchorStyles.None;
+            Greet_text.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             Greet_text.Font = new Font("Times New Roman", 36F, FontStyle.Regular, GraphicsUnit.Point);
             Greet_text.ForeColor = Color.White;
-            Greet_text.Location = new Point(372, 311);
+            Greet_text.Location = new Point(128, 311);
             Greet_text.Name = "Greet_text";
-            Greet_text.Size = new Size(520, 55);
+            Greet_text.Size = new Size(1011, 55);
             Greet_text.TabIndex = 5;
-            Greet_text.Text = "Добро пожаловать,  WIP";
+            Greet_text.Text = "Добро пожаловать, гость";
             Greet_text.TextAlign = ContentAlignment.MiddleCenter;
             Greet_text.Click += Greet_text_Click;
             // 
             // button2
             // 
-            button2.Location = new Point(673, 396);
+            button2.Location = new Point(871, 644);
             button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
             button2.Size = new Size(82, 22);
