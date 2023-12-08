@@ -90,13 +90,13 @@ namespace prjkn
                     return;
                 }
 
-                String querry = "SELECT * FROM accounts WHERE Binary nickname = '"+login_textBox.Text+ "' AND Binary password = '"+ pass_textBox.Text +"'";
+                String querry = "SELECT * FROM accounts WHERE Binary nickname = '" + login_textBox.Text + "' AND Binary password = '" + pass_textBox.Text + "'";
                 MySqlDataAdapter sda = new MySqlDataAdapter(querry, conn);
 
                 DataTable dTable = new DataTable();
                 sda.Fill(dTable);
 
-                if(dTable.Rows.Count > 0)
+                if (dTable.Rows.Count > 0)
                 {
                     loginUser = login_textBox.Text;
                     passUser = pass_textBox.Text;

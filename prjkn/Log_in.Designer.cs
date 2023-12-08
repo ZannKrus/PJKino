@@ -197,6 +197,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Log_in";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Вход";
             Load += Log_in_Load;
             PanelT.ResumeLayout(false);

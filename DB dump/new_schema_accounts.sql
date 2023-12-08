@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: new_schema
 -- ------------------------------------------------------
--- Server version	8.0.34
+-- Server version	8.0.35
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -39,7 +39,7 @@ CREATE TABLE `accounts` (
 
 LOCK TABLES `accounts` WRITE;
 /*!40000 ALTER TABLE `accounts` DISABLE KEYS */;
-INSERT INTO `accounts` VALUES (1,'Иванов','Алексей','alex84@mail.com','alex84','Pass1234'),(2,'Петрова','Екатерина','kate.petrova@gmail.com','katepetrova','Password123'),(3,'Смирнов','Михаил','m.smirnov@gmail.com','mihail99','SecurePass123'),(4,'Козлова','Анна','anna.kozlova22@gmail.com','annakozlova22','StrongPassword1'),(5,'Морозов','Дмитрий','d.morozov@yandex.ru','dmitry.morozov','Password9876'),(7,'admin','admin','admin@mail.com','admin','admin');
+INSERT INTO `accounts` VALUES (1,'Иванов','Алексей','alex84@mail.com','alex84','Pass1234'),(2,'Петрова','Екатерина','kate.petrova@gmail.com','katepetrova','Password123'),(3,'Смирнов','Михаил','m.smirnov@gmail.com','mihail99','SecurePass123'),(4,'Козлова','Анна','anna.kozlova22@gmail.com','annakozlova22','StrongPassword1'),(5,'Морозов','Дмитрий','d.morozov@yandex.ru','dmitry.morozov','Password9876'),(6,'admin','admin','admin@mail.com','admin','admin');
 /*!40000 ALTER TABLE `accounts` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-05 23:36:47
+-- Dump completed on 2023-12-09  1:15:48

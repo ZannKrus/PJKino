@@ -188,7 +188,7 @@ namespace prjkn
         }
         public static int current_i;
         public static int current_acc_i;
-        
+
         public static int current_f_s;
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

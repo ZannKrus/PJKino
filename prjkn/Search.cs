@@ -229,7 +229,7 @@ namespace prjkn
                 {
                     listView2.Items[i].Checked = false;
                 }
-                
+
             }
             else
             {
@@ -249,7 +249,7 @@ namespace prjkn
                 }
                 search_q = search_q + $" ORDER BY new_schema.films.id LIMIT {5 * (offset - 1)}, {5 * offset}";
             }
-            
+
             offset = 1;
             page_b.Enabled = false;
             page_b.Visible = false;

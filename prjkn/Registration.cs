@@ -75,7 +75,7 @@ namespace prjkn
             String lastName = ln_textBox.Text;
             String loginUser = login_textBox.Text;
             String mailUser = mail_textBox.Text;
-            string passUser = pass_textBox.Text;
+            String passUser = pass_textBox.Text;
 
             string hashedPassword = HashPassword(passUser);
 
@@ -135,10 +135,10 @@ namespace prjkn
                     return;
                 }
 
-                String querry = "INSERT INTO accounts SELECT COUNT(*)+1, '"+ln_textBox.Text+"', '"+fn_textBox.Text+"', '"+mail_textBox.Text+"', '"+login_textBox.Text+"', '"+pass_textBox.Text+"' FROM accounts";
+                String querry = "INSERT INTO accounts SELECT COUNT(*)+1, '" + ln_textBox.Text + "', '" + fn_textBox.Text + "', '" + mail_textBox.Text + "', '" + login_textBox.Text + "', '" + pass_textBox.Text + "' FROM accounts";
                 MySqlCommand command = new MySqlCommand(querry, conn);
 
-                conn.Open(); 
+                conn.Open();
                 command.ExecuteNonQuery();
                 MessageBox.Show("Регистрация прошла успешно");
 

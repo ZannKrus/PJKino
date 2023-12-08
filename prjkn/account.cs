@@ -46,7 +46,7 @@ namespace prjkn
             Home_button.FlatAppearance.BorderSize = 0;
             Home_button.FlatStyle = FlatStyle.Flat;
 
-            if(Log_in.is_log == true)
+            if (Log_in.is_log == true)
             {
                 firstname_label.Text = "Имя: " + Log_in.firstNameUser;
                 lastname_label.Text = "Фамилия: " + Log_in.lastNameUser;

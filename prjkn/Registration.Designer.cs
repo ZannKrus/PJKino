@@ -270,6 +270,7 @@
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Registration";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Регистрация";
             Load += Registration_Load;
             PanelT.ResumeLayout(false);

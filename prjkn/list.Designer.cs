@@ -53,8 +53,9 @@
             PanelT.Controls.Add(Menu_button);
             PanelT.Dock = DockStyle.Top;
             PanelT.Location = new Point(0, 0);
+            PanelT.Margin = new Padding(3, 4, 3, 4);
             PanelT.Name = "PanelT";
-            PanelT.Size = new Size(1170, 50);
+            PanelT.Size = new Size(1337, 67);
             PanelT.TabIndex = 1;
             // 
             // PanelBack
@@ -63,29 +64,32 @@
             PanelBack.BackgroundImageLayout = ImageLayout.Stretch;
             PanelBack.Controls.Add(pictureBox2);
             PanelBack.Controls.Add(pictureBox1);
-            PanelBack.Location = new Point(1086, 3);
+            PanelBack.Location = new Point(1241, 4);
+            PanelBack.Margin = new Padding(3, 4, 3, 4);
             PanelBack.Name = "PanelBack";
-            PanelBack.Size = new Size(72, 44);
+            PanelBack.Size = new Size(82, 59);
             PanelBack.TabIndex = 5;
             PanelBack.Click += PanelBack_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            pictureBox2.Location = new Point(14, 0);
-            pictureBox2.MaximumSize = new Size(44, 0);
+            pictureBox2.Location = new Point(16, 0);
+            pictureBox2.Margin = new Padding(3, 4, 3, 4);
+            pictureBox2.MaximumSize = new Size(50, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(44, 0);
+            pictureBox2.Size = new Size(50, 0);
             pictureBox2.TabIndex = 5;
             pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
-            pictureBox1.Location = new Point(-50, 0);
-            pictureBox1.MaximumSize = new Size(44, 0);
+            pictureBox1.Location = new Point(-57, 0);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.MaximumSize = new Size(50, 0);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(44, 0);
+            pictureBox1.Size = new Size(50, 0);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -94,9 +98,10 @@
             Home_button.BackColor = Color.Transparent;
             Home_button.BackgroundImage = (Image)resources.GetObject("Home_button.BackgroundImage");
             Home_button.BackgroundImageLayout = ImageLayout.Stretch;
-            Home_button.Location = new Point(91, 12);
+            Home_button.Location = new Point(104, 16);
+            Home_button.Margin = new Padding(3, 4, 3, 4);
             Home_button.Name = "Home_button";
-            Home_button.Size = new Size(35, 30);
+            Home_button.Size = new Size(40, 40);
             Home_button.TabIndex = 5;
             Home_button.UseVisualStyleBackColor = false;
             Home_button.Click += Home_button_Click;
@@ -105,9 +110,10 @@
             // 
             Search_Button.BackgroundImage = (Image)resources.GetObject("Search_Button.BackgroundImage");
             Search_Button.BackgroundImageLayout = ImageLayout.Stretch;
-            Search_Button.Location = new Point(50, 12);
+            Search_Button.Location = new Point(57, 16);
+            Search_Button.Margin = new Padding(3, 4, 3, 4);
             Search_Button.Name = "Search_Button";
-            Search_Button.Size = new Size(35, 30);
+            Search_Button.Size = new Size(40, 40);
             Search_Button.TabIndex = 11;
             Search_Button.UseVisualStyleBackColor = true;
             Search_Button.Click += Search_Button_Click;
@@ -117,9 +123,10 @@
             Menu_button.BackColor = Color.Transparent;
             Menu_button.BackgroundImage = (Image)resources.GetObject("Menu_button.BackgroundImage");
             Menu_button.BackgroundImageLayout = ImageLayout.Stretch;
-            Menu_button.Location = new Point(12, 12);
+            Menu_button.Location = new Point(14, 16);
+            Menu_button.Margin = new Padding(3, 4, 3, 4);
             Menu_button.Name = "Menu_button";
-            Menu_button.Size = new Size(32, 30);
+            Menu_button.Size = new Size(37, 40);
             Menu_button.TabIndex = 10;
             Menu_button.UseVisualStyleBackColor = false;
             Menu_button.Click += Menu_button_Click;
@@ -127,17 +134,19 @@
             // PanelL
             // 
             PanelL.Dock = DockStyle.Left;
-            PanelL.Location = new Point(0, 50);
+            PanelL.Location = new Point(0, 67);
+            PanelL.Margin = new Padding(3, 4, 3, 4);
             PanelL.Name = "PanelL";
-            PanelL.Size = new Size(122, 741);
+            PanelL.Size = new Size(139, 966);
             PanelL.TabIndex = 2;
             // 
             // PanelR
             // 
             PanelR.Dock = DockStyle.Right;
-            PanelR.Location = new Point(1048, 50);
+            PanelR.Location = new Point(1198, 67);
+            PanelR.Margin = new Padding(3, 4, 3, 4);
             PanelR.Name = "PanelR";
-            PanelR.Size = new Size(122, 741);
+            PanelR.Size = new Size(139, 966);
             PanelR.TabIndex = 3;
             // 
             // list_label
@@ -146,26 +155,28 @@
             list_label.Font = new Font("Segoe UI", 96F, FontStyle.Regular, GraphicsUnit.Point);
             list_label.ForeColor = Color.White;
             list_label.ImageAlign = ContentAlignment.TopCenter;
-            list_label.Location = new Point(128, 53);
+            list_label.Location = new Point(146, 71);
             list_label.Name = "list_label";
-            list_label.Size = new Size(914, 141);
+            list_label.Size = new Size(1045, 188);
             list_label.TabIndex = 4;
             list_label.Text = "Мой список";
             list_label.TextAlign = ContentAlignment.TopCenter;
             // 
             // list
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.circles;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1170, 791);
+            ClientSize = new Size(1337, 1033);
             Controls.Add(list_label);
             Controls.Add(PanelR);
             Controls.Add(PanelL);
             Controls.Add(PanelT);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 4, 3, 4);
             Name = "list";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Мой список";
             Load += list_Load;
             PanelT.ResumeLayout(false);
