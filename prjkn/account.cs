@@ -87,5 +87,13 @@ namespace prjkn
             wlc.ShowDialog();
             this.Close();
         }
+
+        private void edit_linkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Hide();
+            account_edit acce = new account_edit();
+            acce.ShowDialog();
+            this.Close();
+        }
     }
 }

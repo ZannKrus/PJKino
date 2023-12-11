@@ -1,6 +1,6 @@
 ﻿namespace prjkn
 {
-    partial class account
+    partial class account_edit
     {
         /// <summary>
         /// Required designer variable.
@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(account));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(account_edit));
             PanelT = new Panel();
             Home_button = new Button();
             Search_Button = new Button();
             Menu_button = new Button();
             PanelL = new Panel();
             PanelR = new Panel();
-            account_img = new PictureBox();
-            firstname_label = new Label();
-            lastname_label = new Label();
-            login_label = new Label();
             mail_label = new Label();
-            edit_linkLabel = new LinkLabel();
-            exit_linkLabel = new LinkLabel();
+            login_label = new Label();
+            lastname_label = new Label();
+            firstname_label = new Label();
+            account_img = new PictureBox();
+            textBox1 = new TextBox();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox4 = new TextBox();
+            Save_button = new Button();
             PanelT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)account_img).BeginInit();
             SuspendLayout();
@@ -56,7 +59,7 @@
             PanelT.Margin = new Padding(3, 4, 3, 4);
             PanelT.Name = "PanelT";
             PanelT.Size = new Size(1514, 67);
-            PanelT.TabIndex = 0;
+            PanelT.TabIndex = 1;
             // 
             // Home_button
             // 
@@ -103,7 +106,7 @@
             PanelL.Margin = new Padding(3, 4, 3, 4);
             PanelL.Name = "PanelL";
             PanelL.Size = new Size(139, 896);
-            PanelL.TabIndex = 1;
+            PanelL.TabIndex = 2;
             // 
             // PanelR
             // 
@@ -112,49 +115,7 @@
             PanelR.Margin = new Padding(3, 4, 3, 4);
             PanelR.Name = "PanelR";
             PanelR.Size = new Size(139, 896);
-            PanelR.TabIndex = 2;
-            // 
-            // account_img
-            // 
-            account_img.Location = new Point(146, 75);
-            account_img.Margin = new Padding(3, 4, 3, 4);
-            account_img.Name = "account_img";
-            account_img.Size = new Size(343, 400);
-            account_img.TabIndex = 3;
-            account_img.TabStop = false;
-            // 
-            // firstname_label
-            // 
-            firstname_label.AutoSize = true;
-            firstname_label.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            firstname_label.ForeColor = Color.White;
-            firstname_label.Location = new Point(496, 175);
-            firstname_label.Name = "firstname_label";
-            firstname_label.Size = new Size(110, 54);
-            firstname_label.TabIndex = 4;
-            firstname_label.Text = "Имя:";
-            // 
-            // lastname_label
-            // 
-            lastname_label.AutoSize = true;
-            lastname_label.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            lastname_label.ForeColor = Color.White;
-            lastname_label.Location = new Point(496, 235);
-            lastname_label.Name = "lastname_label";
-            lastname_label.Size = new Size(196, 54);
-            lastname_label.TabIndex = 5;
-            lastname_label.Text = "Фамилия:";
-            // 
-            // login_label
-            // 
-            login_label.AutoSize = true;
-            login_label.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            login_label.ForeColor = Color.White;
-            login_label.Location = new Point(496, 295);
-            login_label.Name = "login_label";
-            login_label.Size = new Size(143, 54);
-            login_label.TabIndex = 6;
-            login_label.Text = "Логин:";
+            PanelR.TabIndex = 3;
             // 
             // mail_label
             // 
@@ -164,49 +125,107 @@
             mail_label.Location = new Point(496, 355);
             mail_label.Name = "mail_label";
             mail_label.Size = new Size(143, 54);
-            mail_label.TabIndex = 7;
+            mail_label.TabIndex = 12;
             mail_label.Text = "Почта:";
             // 
-            // edit_linkLabel
+            // login_label
             // 
-            edit_linkLabel.ActiveLinkColor = Color.White;
-            edit_linkLabel.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            edit_linkLabel.AutoSize = true;
-            edit_linkLabel.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            edit_linkLabel.LinkColor = Color.White;
-            edit_linkLabel.Location = new Point(1084, 67);
-            edit_linkLabel.Name = "edit_linkLabel";
-            edit_linkLabel.Size = new Size(291, 54);
-            edit_linkLabel.TabIndex = 8;
-            edit_linkLabel.TabStop = true;
-            edit_linkLabel.Text = "Редактировать";
-            edit_linkLabel.VisitedLinkColor = Color.White;
-            edit_linkLabel.LinkClicked += edit_linkLabel_LinkClicked;
+            login_label.AutoSize = true;
+            login_label.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            login_label.ForeColor = Color.White;
+            login_label.Location = new Point(496, 295);
+            login_label.Name = "login_label";
+            login_label.Size = new Size(143, 54);
+            login_label.TabIndex = 11;
+            login_label.Text = "Логин:";
             // 
-            // exit_linkLabel
+            // lastname_label
             // 
-            exit_linkLabel.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            exit_linkLabel.AutoSize = true;
-            exit_linkLabel.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            exit_linkLabel.LinkColor = Color.Red;
-            exit_linkLabel.Location = new Point(1239, 891);
-            exit_linkLabel.Name = "exit_linkLabel";
-            exit_linkLabel.Size = new Size(136, 54);
-            exit_linkLabel.TabIndex = 9;
-            exit_linkLabel.TabStop = true;
-            exit_linkLabel.Text = "Выйти";
-            exit_linkLabel.VisitedLinkColor = Color.Red;
-            exit_linkLabel.LinkClicked += exit_linkLabel_LinkClicked;
+            lastname_label.AutoSize = true;
+            lastname_label.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            lastname_label.ForeColor = Color.White;
+            lastname_label.Location = new Point(496, 235);
+            lastname_label.Name = "lastname_label";
+            lastname_label.Size = new Size(196, 54);
+            lastname_label.TabIndex = 10;
+            lastname_label.Text = "Фамилия:";
             // 
-            // account
+            // firstname_label
+            // 
+            firstname_label.AutoSize = true;
+            firstname_label.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            firstname_label.ForeColor = Color.White;
+            firstname_label.Location = new Point(496, 175);
+            firstname_label.Name = "firstname_label";
+            firstname_label.Size = new Size(110, 54);
+            firstname_label.TabIndex = 9;
+            firstname_label.Text = "Имя:";
+            // 
+            // account_img
+            // 
+            account_img.Location = new Point(146, 75);
+            account_img.Margin = new Padding(3, 4, 3, 4);
+            account_img.Name = "account_img";
+            account_img.Size = new Size(343, 400);
+            account_img.TabIndex = 8;
+            account_img.TabStop = false;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox1.Location = new Point(700, 175);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(365, 51);
+            textBox1.TabIndex = 13;
+            // 
+            // textBox2
+            // 
+            textBox2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox2.Location = new Point(700, 235);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(365, 51);
+            textBox2.TabIndex = 14;
+            // 
+            // textBox3
+            // 
+            textBox3.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox3.Location = new Point(700, 295);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(365, 51);
+            textBox3.TabIndex = 15;
+            // 
+            // textBox4
+            // 
+            textBox4.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point);
+            textBox4.Location = new Point(700, 355);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(365, 51);
+            textBox4.TabIndex = 16;
+            // 
+            // Save_button
+            // 
+            Save_button.BackColor = Color.White;
+            Save_button.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            Save_button.Location = new Point(771, 603);
+            Save_button.Name = "Save_button";
+            Save_button.Size = new Size(228, 62);
+            Save_button.TabIndex = 17;
+            Save_button.Text = "Сохранить";
+            Save_button.UseVisualStyleBackColor = false;
+            Save_button.Click += Save_button_Click;
+            // 
+            // account_edit
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.circles;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1514, 963);
-            Controls.Add(exit_linkLabel);
-            Controls.Add(edit_linkLabel);
+            Controls.Add(Save_button);
+            Controls.Add(textBox4);
+            Controls.Add(textBox3);
+            Controls.Add(textBox2);
+            Controls.Add(textBox1);
             Controls.Add(mail_label);
             Controls.Add(login_label);
             Controls.Add(lastname_label);
@@ -216,11 +235,10 @@
             Controls.Add(PanelL);
             Controls.Add(PanelT);
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "account";
+            Name = "account_edit";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Аккаунт";
-            Load += account_Load;
+            Text = "Редактор аккаунта";
+            Load += account_edit_Load;
             PanelT.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)account_img).EndInit();
             ResumeLayout(false);
@@ -230,17 +248,20 @@
         #endregion
 
         private Panel PanelT;
+        private Button Home_button;
+        private Button Search_Button;
+        private Button Menu_button;
         private Panel PanelL;
         private Panel PanelR;
-        private PictureBox account_img;
-        private Label firstname_label;
-        private Label lastname_label;
-        private Label login_label;
         private Label mail_label;
-        private LinkLabel edit_linkLabel;
-        private LinkLabel exit_linkLabel;
-        private Button Menu_button;
-        private Button Search_Button;
-        private Button Home_button;
+        private Label login_label;
+        private Label lastname_label;
+        private Label firstname_label;
+        private PictureBox account_img;
+        private TextBox textBox1;
+        private TextBox textBox2;
+        private TextBox textBox3;
+        private TextBox textBox4;
+        private Button Save_button;
     }
 }

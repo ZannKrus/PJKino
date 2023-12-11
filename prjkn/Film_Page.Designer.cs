@@ -40,10 +40,15 @@
             PanelL = new Panel();
             pictureBox2 = new PictureBox();
             film_name = new Label();
-            director_label = new Label();
-            mainrole_label = new Label();
+            director_label_fn = new Label();
+            mainrole_label_fn = new Label();
             genre_label = new Label();
             panel1 = new Panel();
+            mainrole_label_ln = new Label();
+            director_label_ln = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            label1 = new Label();
             description_label = new Label();
             flowLayoutPanel1 = new FlowLayoutPanel();
             comboBox1 = new ComboBox();
@@ -189,34 +194,34 @@
             film_name.TextAlign = ContentAlignment.MiddleCenter;
             film_name.Click += film_name_Click;
             // 
-            // director_label
+            // director_label_fn
             // 
-            director_label.AutoSize = true;
-            director_label.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            director_label.ForeColor = Color.White;
-            director_label.Location = new Point(0, 35);
-            director_label.Name = "director_label";
-            director_label.Size = new Size(120, 29);
-            director_label.TabIndex = 15;
-            director_label.Text = "Режиссер:";
+            director_label_fn.AutoSize = true;
+            director_label_fn.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            director_label_fn.ForeColor = Color.White;
+            director_label_fn.Location = new Point(0, 70);
+            director_label_fn.Name = "director_label_fn";
+            director_label_fn.Size = new Size(120, 29);
+            director_label_fn.TabIndex = 15;
+            director_label_fn.Text = "Режиссер:";
             // 
-            // mainrole_label
+            // mainrole_label_fn
             // 
-            mainrole_label.AutoSize = true;
-            mainrole_label.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
-            mainrole_label.ForeColor = Color.White;
-            mainrole_label.Location = new Point(0, 171);
-            mainrole_label.Name = "mainrole_label";
-            mainrole_label.Size = new Size(197, 29);
-            mainrole_label.TabIndex = 17;
-            mainrole_label.Text = "В главных ролях:";
+            mainrole_label_fn.AutoSize = true;
+            mainrole_label_fn.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            mainrole_label_fn.ForeColor = Color.White;
+            mainrole_label_fn.Location = new Point(0, 206);
+            mainrole_label_fn.Name = "mainrole_label_fn";
+            mainrole_label_fn.Size = new Size(197, 29);
+            mainrole_label_fn.TabIndex = 17;
+            mainrole_label_fn.Text = "В главных ролях:";
             // 
             // genre_label
             // 
             genre_label.AutoSize = true;
             genre_label.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
             genre_label.ForeColor = Color.White;
-            genre_label.Location = new Point(0, 298);
+            genre_label.Location = new Point(0, 333);
             genre_label.Name = "genre_label";
             genre_label.Size = new Size(94, 29);
             genre_label.TabIndex = 19;
@@ -226,14 +231,74 @@
             // 
             panel1.Anchor = AnchorStyles.Right;
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(mainrole_label_ln);
+            panel1.Controls.Add(director_label_ln);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(genre_label);
-            panel1.Controls.Add(director_label);
-            panel1.Controls.Add(mainrole_label);
+            panel1.Controls.Add(director_label_fn);
+            panel1.Controls.Add(mainrole_label_fn);
             panel1.Location = new Point(1266, 196);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
             panel1.Size = new Size(291, 393);
             panel1.TabIndex = 21;
+            // 
+            // mainrole_label_ln
+            // 
+            mainrole_label_ln.AutoSize = true;
+            mainrole_label_ln.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            mainrole_label_ln.ForeColor = Color.White;
+            mainrole_label_ln.Location = new Point(50, 206);
+            mainrole_label_ln.Name = "mainrole_label_ln";
+            mainrole_label_ln.Size = new Size(197, 29);
+            mainrole_label_ln.TabIndex = 24;
+            mainrole_label_ln.Text = "В главных ролях:";
+            // 
+            // director_label_ln
+            // 
+            director_label_ln.AutoSize = true;
+            director_label_ln.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            director_label_ln.ForeColor = Color.White;
+            director_label_ln.Location = new Point(90, 70);
+            director_label_ln.Name = "director_label_ln";
+            director_label_ln.Size = new Size(120, 29);
+            director_label_ln.TabIndex = 23;
+            director_label_ln.Text = "Режиссер:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(0, 298);
+            label3.Name = "label3";
+            label3.Size = new Size(94, 29);
+            label3.TabIndex = 22;
+            label3.Text = "Жанры:";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.White;
+            label2.Location = new Point(0, 171);
+            label2.Name = "label2";
+            label2.Size = new Size(197, 29);
+            label2.TabIndex = 21;
+            label2.Text = "В главных ролях:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Times New Roman", 15F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(0, 35);
+            label1.Name = "label1";
+            label1.Size = new Size(120, 29);
+            label1.TabIndex = 20;
+            label1.Text = "Режиссер:";
             // 
             // description_label
             // 
@@ -333,8 +398,8 @@
         private Button Home_button;
         private PictureBox pictureBox2;
         private Label film_name;
-        private Label director_label;
-        private Label mainrole_label;
+        private Label director_label_fn;
+        private Label mainrole_label_fn;
         private Label genre_label;
         private Panel PanelBack;
         private PictureBox pictureBox1;
@@ -344,5 +409,10 @@
         private FlowLayoutPanel flowLayoutPanel1;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
+        private Label label3;
+        private Label label2;
+        private Label label1;
+        private Label mainrole_label_ln;
+        private Label director_label_ln;
     }
 }

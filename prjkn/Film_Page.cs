@@ -50,9 +50,9 @@ namespace prjkn
             Home_button.FlatStyle = FlatStyle.Flat;
             //тексты
             film_name.BackColor = Color.FromArgb(0, 0, 0, 0);
-            director_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            director_label_fn.BackColor = Color.FromArgb(0, 0, 0, 0);
             //director_name_label.BackColor = Color.FromArgb(0, 0, 0, 0);
-            mainrole_label.BackColor = Color.FromArgb(0, 0, 0, 0);
+            mainrole_label_fn.BackColor = Color.FromArgb(0, 0, 0, 0);
             // mainrole_name_label.BackColor = Color.FromArgb(0, 0, 0, 0);
             genre_label.BackColor = Color.FromArgb(0, 0, 0, 0);
             //genre_name_label.BackColor = Color.FromArgb(0, 0, 0, 0);
@@ -65,6 +65,7 @@ namespace prjkn
 
             int current_film_i = Search.current_film_i + 1;
             conn.Open();
+
             MySqlCommand cmd0 = new MySqlCommand($"SELECT * FROM new_schema.films WHERE id = {current_film_i}", conn);
             MySqlDataReader dr = cmd0.ExecuteReader();
             dr.Read();
@@ -74,7 +75,25 @@ namespace prjkn
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             dr.Close();
 
+            MySqlCommand cmd4 = new MySqlCommand($"SELECT * FROM new_schema.directors WHERE id = {current_film_i}", conn);
+            MySqlDataReader dr1 = cmd4.ExecuteReader();
+            dr1.Read();
+            director_label_fn.Text = dr1["first_name"].ToString();
+            director_label_ln.Text = dr1["last_name"].ToString();
+            dr1.Close();
 
+            MySqlCommand cmd5 = new MySqlCommand($"SELECT * FROM new_schema.actors WHERE id = {current_film_i}", conn);
+            MySqlDataReader dr5 = cmd5.ExecuteReader();
+            dr5.Read();
+            mainrole_label_fn.Text = dr5["first_name"].ToString();
+            mainrole_label_ln.Text = dr5["last_name"].ToString();
+            dr5.Close();
+
+            MySqlCommand cmd6 = new MySqlCommand($"SELECT * FROM new_schema.genres WHERE id = {current_film_i}", conn);
+            MySqlDataReader dr3 = cmd6.ExecuteReader();
+            dr3.Read();
+            genre_label.Text = dr3["genre_name"].ToString();
+            dr3.Close();
 
             if (Log_in.is_log)
             {
