@@ -55,6 +55,8 @@
             save = new Button();
             flowLayoutPanel2 = new FlowLayoutPanel();
             label4 = new Label();
+            richTextBox1 = new RichTextBox();
+            button1 = new Button();
             PanelT.SuspendLayout();
             PanelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -331,22 +333,25 @@
             // 
             // save
             // 
+            save.Enabled = false;
             save.Location = new Point(128, 558);
             save.Name = "save";
             save.Size = new Size(75, 23);
             save.TabIndex = 25;
             save.Text = "Сохранить";
             save.UseVisualStyleBackColor = true;
+            save.Visible = false;
             save.Click += save_Click;
             // 
             // flowLayoutPanel2
             // 
             flowLayoutPanel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            flowLayoutPanel2.AutoScroll = true;
             flowLayoutPanel2.BackColor = Color.Transparent;
-            flowLayoutPanel2.Location = new Point(128, 682);
+            flowLayoutPanel2.Location = new Point(128, 759);
             flowLayoutPanel2.MaximumSize = new Size(600, 1000);
             flowLayoutPanel2.Name = "flowLayoutPanel2";
-            flowLayoutPanel2.Size = new Size(600, 244);
+            flowLayoutPanel2.Size = new Size(600, 167);
             flowLayoutPanel2.TabIndex = 26;
             // 
             // label4
@@ -361,6 +366,27 @@
             label4.TabIndex = 27;
             label4.Text = "Отзывы:";
             // 
+            // richTextBox1
+            // 
+            richTextBox1.Enabled = false;
+            richTextBox1.Location = new Point(128, 682);
+            richTextBox1.Name = "richTextBox1";
+            richTextBox1.Size = new Size(600, 71);
+            richTextBox1.TabIndex = 28;
+            richTextBox1.Text = "";
+            richTextBox1.TextChanged += richTextBox1_TextChanged;
+            // 
+            // button1
+            // 
+            button1.Enabled = false;
+            button1.Location = new Point(734, 681);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 29;
+            button1.Text = "Отправить";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Film_Page
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -368,6 +394,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1491, 938);
+            Controls.Add(button1);
+            Controls.Add(richTextBox1);
             Controls.Add(label4);
             Controls.Add(flowLayoutPanel2);
             Controls.Add(save);
@@ -425,5 +453,7 @@
         private Button save;
         private FlowLayoutPanel flowLayoutPanel2;
         private Label label4;
+        private RichTextBox richTextBox1;
+        private Button button1;
     }
 }

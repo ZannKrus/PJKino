@@ -101,6 +101,10 @@ namespace prjkn
 
             if (Log_in.is_log)
             {
+                save.Visible = true;
+                save.Enabled = true;
+                richTextBox1.Enabled = true;
+                button1.Enabled = true;
                 comboBox1.Enabled = true;
                 comboBox2.Enabled = true;
                 comboBox1.Visible = true;
@@ -153,8 +157,16 @@ namespace prjkn
             film_name.Text += $" {rating}★";
 
 
-            MySqlCommand cmd_comm = new MySqlCommand($"SELECT films_id,nickname,comment FROM new_schema.accounts, new_schema.comments where accounts.id = comments.accounts_id and films_id = {current_film_i}", conn);
-            rd = cmd_comm.ExecuteReader();
+            
+            conn.Close();
+            comment_load();
+        }
+        public void comment_load()
+        {
+            conn.Open();
+            flowLayoutPanel2.Controls.Clear();
+            MySqlCommand cmd_comm = new MySqlCommand($"SELECT films_id,nickname,comment FROM new_schema.accounts, new_schema.comments where accounts.id = comments.accounts_id and films_id = {current_f_i}", conn);
+            MySqlDataReader rd = cmd_comm.ExecuteReader();
             while (rd.Read())
             {
                 string n = rd.GetString("nickname");
@@ -164,14 +176,13 @@ namespace prjkn
                 label.AutoSize = true;
                 label.Font = new Font("Segoe", 15);
                 label.ForeColor = Color.White;
-                label.Padding = new Padding(15);
+                label.Padding = new Padding(15, 15, 100, 15);
                 label.Text = $"{n}: {c}";
                 flowLayoutPanel2.Controls.Add(label);
             }
             rd.Close();
             conn.Close();
         }
-
         private void Home_button_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -306,6 +317,21 @@ namespace prjkn
             cmd0.ExecuteNonQuery();
             cmd.ExecuteNonQuery();
             conn2.Close();
+        }
+        public static string comment = "";
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            comment = richTextBox1.Text;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand($"insert into new_schema.comments (id, accounts_id, films_id, comment) values({0},{current_acc_i},{current_f_i},\"{comment}\")",conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            richTextBox1.Clear();
+            comment_load();
         }
     }
 }
