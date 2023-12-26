@@ -1,8 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,9 +34,13 @@ namespace prjkn
             login_label.BackColor = Color.FromArgb(0, 255, 255, 255);
             //круглая картинка
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, account_img.Width - 3, account_img.Height - 3);
+            gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
             Region rg = new Region(gp);
-            account_img.Region = rg;
+            pictureBox1.Region = rg;
+            if (Log_in.is_log)
+            {
+                pictureBox1.Image = Image.FromStream(Log_in.imgUser);
+            }
             //цвет кнопок
             Menu_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Search_Button.BackColor = Color.FromArgb(0, 100, 79, 47);
@@ -129,6 +135,8 @@ namespace prjkn
                 account acc = new account();
                 acc.ShowDialog();
                 this.Close();
+
+                
             }
             catch
             {
@@ -138,6 +146,54 @@ namespace prjkn
             {
                 conn.Close();
             }
+            
+
+        }
+        public void UploadImage(Image img)
+        {
+            var userImage = imageToByte(img);
+
+            conn.Open();
+
+            var command = new MySqlCommand("", conn);
+
+            command.CommandText = $"UPDATE accounts SET avatar = @avatar WHERE nickname = \"{Log_in.loginUser}\";";
+
+            var paramUserImage = new MySqlParameter("@avatar", MySqlDbType.LongBlob, userImage.Length);
+
+            paramUserImage.Value = userImage;
+
+            command.Parameters.Add(paramUserImage);
+
+            command.ExecuteNonQuery();
+
+            conn.Close();
+        }
+
+        public byte[] imageToByte(Image img)
+        {
+            using (var ms = new MemoryStream())
+            {
+                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms.ToArray();
+            }
+        }
+        public static Image img_s = Image.FromStream(Log_in.imgUser);
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog1 = new OpenFileDialog();
+            openFileDialog1.Filter = "Image files | *.jpg";
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                img_s = Image.FromFile(openFileDialog1.FileName);
+                pictureBox1.Image = img_s;
+                UploadImage(img_s);
+                MemoryStream ms = new MemoryStream(imageToByte(img_s));
+                Log_in.imgUser = ms;
+            }
+            
+
+
         }
     }
 }

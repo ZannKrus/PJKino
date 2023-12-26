@@ -125,6 +125,16 @@ namespace prjkn
             }
             conn.Close();
             Debug.WriteLine(search_q);
+
+
+            System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
+            gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
+            Region rg = new Region(gp);
+            pictureBox1.Region = rg;
+            if (Log_in.is_log)
+            {
+                pictureBox1.Image = System.Drawing.Image.FromStream(Log_in.imgUser);
+            }
         }
 
         private void Home_button_Click(object sender, EventArgs e)

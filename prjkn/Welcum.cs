@@ -38,6 +38,11 @@ namespace prjkn
             gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
             Region rg = new Region(gp);
             pictureBox1.Region = rg;
+            if (Log_in.is_log)
+            {
+                pictureBox1.Image = Image.FromStream(Log_in.imgUser);
+            }
+
 
             if (Log_in.is_log == true && Log_in.loginUser == "admin")
             {

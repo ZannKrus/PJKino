@@ -46,6 +46,8 @@ namespace prjkn
             Home_button.FlatAppearance.BorderSize = 0;
             Home_button.FlatStyle = FlatStyle.Flat;
 
+            account_img.Image = Image.FromStream(Log_in.imgUser);
+
             if (Log_in.is_log == true)
             {
                 firstname_label.Text = "Имя: " + Log_in.firstNameUser;

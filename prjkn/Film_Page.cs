@@ -59,9 +59,13 @@ namespace prjkn
             description_label.BackColor = Color.FromArgb(0, 0, 0, 0);
 
             System.Drawing.Drawing2D.GraphicsPath gp = new System.Drawing.Drawing2D.GraphicsPath();
-            gp.AddEllipse(0, 0, pictureBox3.Width - 3, pictureBox3.Height - 3);
+            gp.AddEllipse(0, 0, pictureBox1.Width - 3, pictureBox1.Height - 3);
             Region rg = new Region(gp);
-            pictureBox3.Region = rg;
+            pictureBox1.Region = rg;
+            if (Log_in.is_log)
+            {
+                pictureBox1.Image = Image.FromStream(Log_in.imgUser);
+            }
 
             int current_film_i = Search.current_film_i + 1;
             conn.Open();
@@ -133,9 +137,39 @@ namespace prjkn
             conn.Close();
 
             conn.Open();
-            MySqlCommand cmd3 = new MySqlCommand($"SELECT AVG(*) FROM (SELECT * FROM new_schema.accounts_films WHERE film_rating > 0)", conn);
+            double rating = 0;
 
-            conn.Clone();
+            MySqlCommand cmd_rating = new MySqlCommand($"SELECT film_rating FROM new_schema.accounts_films WHERE films_id = {current_film_i} and film_rating > 0", conn);
+            MySqlCommand cmd_rating_count = new MySqlCommand($"SELECT count(*) FROM new_schema.accounts_films WHERE films_id = {current_film_i} and film_rating > 0", conn);
+
+            MySqlDataReader rd = cmd_rating.ExecuteReader();
+            while (rd.Read())
+            {
+                rating += 11 - Convert.ToDouble(rd.GetString("film_rating"));
+            }
+            rd.Close();
+            rating = rating / Convert.ToDouble(cmd_rating_count.ExecuteScalar());
+            if (double.IsNaN(rating)) rating = 0;
+            film_name.Text += $" {rating}★";
+
+
+            MySqlCommand cmd_comm = new MySqlCommand($"SELECT films_id,nickname,comment FROM new_schema.accounts, new_schema.comments where accounts.id = comments.accounts_id and films_id = {current_film_i}", conn);
+            rd = cmd_comm.ExecuteReader();
+            while (rd.Read())
+            {
+                string n = rd.GetString("nickname");
+                string c = rd.GetString("comment");
+
+                Label label = new Label();
+                label.AutoSize = true;
+                label.Font = new Font("Segoe", 15);
+                label.ForeColor = Color.White;
+                label.Padding = new Padding(15);
+                label.Text = $"{n}: {c}";
+                flowLayoutPanel2.Controls.Add(label);
+            }
+            rd.Close();
+            conn.Close();
         }
 
         private void Home_button_Click(object sender, EventArgs e)
@@ -212,36 +246,46 @@ namespace prjkn
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            conn2.Open();
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand($"insert INTO new_schema.accounts_films (id, accounts_id, films_id, film_rating, accounts_films_status_id) VALUES ({current_i},{current_acc_i},{current_f_i},{comboBox1.SelectedIndex},{comboBox2.SelectedIndex})", conn2);
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                MySqlCommand cmd = new MySqlCommand($"update new_schema.accounts_films SET id = {current_i}, accounts_id = {current_acc_i}, films_id = {current_f_i}, film_rating = {comboBox1.SelectedIndex}, accounts_films_status_id = {comboBox2.SelectedIndex} WHERE id = {current_i}", conn2);
-                cmd.ExecuteNonQuery();
-            }
-            conn2.Close();
-            Debug.WriteLine($"c1: {comboBox1.SelectedIndex}");
+            //conn2.Open();
+            //try
+            //{
+            //    MySqlCommand cmd = new MySqlCommand($"insert INTO new_schema.accounts_films (id, accounts_id, films_id, film_rating, accounts_films_status_id) VALUES ({current_i},{current_acc_i},{current_f_i},{comboBox1.SelectedIndex},{comboBox2.SelectedIndex})", conn2);
+            //    cmd.ExecuteNonQuery();
+            //}
+            //catch
+            //{
+            //    MySqlCommand cmd = new MySqlCommand($"update new_schema.accounts_films SET id = {current_i}, accounts_id = {current_acc_i}, films_id = {current_f_i}, film_rating = {comboBox1.SelectedIndex}, accounts_films_status_id = {comboBox2.SelectedIndex} WHERE id = {current_i}", conn2);
+            //    cmd.ExecuteNonQuery();
+            //}
+            //conn2.Close();
+            //Debug.WriteLine($"c1: {comboBox1.SelectedIndex}");
         }
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //conn2.Open();
+            //try
+            //{
+            //    MySqlCommand cmd = new MySqlCommand($"insert INTO new_schema.accounts_films (id, accounts_id, films_id, film_rating, accounts_films_status_id) VALUES ({current_i},{current_acc_i},{current_f_i},{comboBox1.SelectedIndex},{comboBox2.SelectedIndex})", conn2);
+            //    cmd.ExecuteNonQuery();
+            //}
+            //catch
+            //{
+            //    MySqlCommand cmd = new MySqlCommand($"update new_schema.accounts_films SET id = {current_i}, accounts_id = {current_acc_i}, films_id = {current_f_i}, film_rating = {comboBox1.SelectedIndex}, accounts_films_status_id = {comboBox2.SelectedIndex} WHERE id = {current_i}", conn2);
+            //    cmd.ExecuteNonQuery();
+            //}
+            //conn2.Close();
+            //Debug.WriteLine($"c2: {comboBox2.SelectedIndex}");
+        }
+
+        private void save_Click(object sender, EventArgs e)
+        {
             conn2.Open();
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand($"insert INTO new_schema.accounts_films (id, accounts_id, films_id, film_rating, accounts_films_status_id) VALUES ({current_i},{current_acc_i},{current_f_i},{comboBox1.SelectedIndex},{comboBox2.SelectedIndex})", conn2);
-                cmd.ExecuteNonQuery();
-            }
-            catch
-            {
-                MySqlCommand cmd = new MySqlCommand($"update new_schema.accounts_films SET id = {current_i}, accounts_id = {current_acc_i}, films_id = {current_f_i}, film_rating = {comboBox1.SelectedIndex}, accounts_films_status_id = {comboBox2.SelectedIndex} WHERE id = {current_i}", conn2);
-                cmd.ExecuteNonQuery();
-            }
+            MySqlCommand cmd0 = new MySqlCommand($"delete from new_schema.accounts_films where accounts_id = {current_acc_i}", conn2);
+            MySqlCommand cmd = new MySqlCommand($"insert INTO new_schema.accounts_films (id, accounts_id, films_id, film_rating, accounts_films_status_id) VALUES ({current_i},{current_acc_i},{current_f_i},{comboBox1.SelectedIndex},{comboBox2.SelectedIndex}) ON DUPLICATE KEY UPDATE film_rating = {comboBox1.SelectedIndex}, accounts_films_status_id = {comboBox2.SelectedIndex}", conn2);
+            cmd0.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
             conn2.Close();
-            Debug.WriteLine($"c2: {comboBox2.SelectedIndex}");
         }
     }
 }
