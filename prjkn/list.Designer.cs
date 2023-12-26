@@ -31,13 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(list));
             PanelT = new Panel();
             PanelBack = new Panel();
+            pictureBox1 = new PictureBox();
             Home_button = new Button();
             Search_Button = new Button();
             Menu_button = new Button();
             PanelL = new Panel();
             PanelR = new Panel();
             list_label = new Label();
-            pictureBox1 = new PictureBox();
+            listView1 = new ListView();
             PanelT.SuspendLayout();
             PanelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -65,6 +66,16 @@
             PanelBack.Size = new Size(72, 44);
             PanelBack.TabIndex = 5;
             PanelBack.Click += PanelBack_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(15, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 44);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += PanelBack_Click;
             // 
             // Home_button
             // 
@@ -130,14 +141,17 @@
             list_label.Text = "Мой список";
             list_label.TextAlign = ContentAlignment.TopCenter;
             // 
-            // pictureBox1
+            // listView1
             // 
-            pictureBox1.Location = new Point(15, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(44, 44);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
+            listView1.BackColor = Color.Black;
+            listView1.ForeColor = Color.White;
+            listView1.GridLines = true;
+            listView1.Location = new Point(128, 197);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(914, 566);
+            listView1.TabIndex = 5;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
             // 
             // list
             // 
@@ -146,6 +160,7 @@
             BackgroundImage = Properties.Resources.circles;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1170, 775);
+            Controls.Add(listView1);
             Controls.Add(list_label);
             Controls.Add(PanelR);
             Controls.Add(PanelL);
@@ -172,5 +187,6 @@
         private Button Home_button;
         private Panel PanelBack;
         private PictureBox pictureBox1;
+        private ListView listView1;
     }
 }

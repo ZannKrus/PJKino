@@ -103,6 +103,7 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 25;
             pictureBox1.TabStop = false;
+            pictureBox1.Click += PanelBack_Click;
             // 
             // Home_button
             // 

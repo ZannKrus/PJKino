@@ -32,10 +32,20 @@ namespace prjkn
 
         private void Menu_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            list list = new list();
-            list.ShowDialog();
-            this.Close();
+            if (Log_in.is_log == true)
+            {
+                this.Hide();
+                list list = new list();
+                list.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Hide();
+                Log_in_and_Registration logreg = new Log_in_and_Registration();
+                logreg.ShowDialog();
+                this.Close();
+            }
         }
 
         private void Search_button_Click(object sender, EventArgs e)
@@ -71,6 +81,7 @@ namespace prjkn
         public static String lastNameUser;
         public static String mailUser;
         public static MemoryStream imgUser;
+        public static string idUser;
         public static bool is_log = false;
         private void Log_in_button_Click(object sender, EventArgs e)
         {
@@ -109,6 +120,7 @@ namespace prjkn
                         firstNameUser = row["first_name"].ToString();
                         lastNameUser = row["last_name"].ToString();
                         mailUser = row["Email"].ToString();
+                        idUser = row["id"].ToString();
 
                         MemoryStream ms = new MemoryStream((byte[])row["Avatar"]);
                         imgUser = ms;

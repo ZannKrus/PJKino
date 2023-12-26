@@ -63,10 +63,20 @@ namespace prjkn
 
         private void Menu_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            list list = new list();
-            list.ShowDialog();
-            this.Close();
+            if (Log_in.is_log == true)
+            {
+                this.Hide();
+                list list = new list();
+                list.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Hide();
+                Log_in_and_Registration logreg = new Log_in_and_Registration();
+                logreg.ShowDialog();
+                this.Close();
+            }
         }
 
         private void Home_button_Click(object sender, EventArgs e)

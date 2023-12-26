@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Search));
             PanelT = new Panel();
             PanelBack = new Panel();
+            pictureBox1 = new PictureBox();
             Home_button = new Button();
             Search_button = new Button();
             Menu_button = new Button();
@@ -42,7 +43,6 @@
             page_text = new Label();
             search_textBox = new TextBox();
             button_search = new Button();
-            pictureBox1 = new PictureBox();
             PanelT.SuspendLayout();
             PanelBack.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -71,6 +71,16 @@
             PanelBack.Size = new Size(72, 44);
             PanelBack.TabIndex = 3;
             PanelBack.Click += PanelBack_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(15, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(44, 44);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 4;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += PanelBack_Click;
             // 
             // Home_button
             // 
@@ -196,15 +206,6 @@
             button_search.Text = "Поиск";
             button_search.UseVisualStyleBackColor = true;
             button_search.Click += button_search_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(15, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(44, 44);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 4;
-            pictureBox1.TabStop = false;
             // 
             // Search
             // 

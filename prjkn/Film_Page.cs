@@ -212,18 +212,38 @@ namespace prjkn
 
         private void Menu_button_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            list list = new list();
-            list.ShowDialog();
-            this.Close();
+            if (Log_in.is_log == true)
+            {
+                this.Hide();
+                list list = new list();
+                list.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Hide();
+                Log_in_and_Registration logreg = new Log_in_and_Registration();
+                logreg.ShowDialog();
+                this.Close();
+            }
         }
 
         private void PanelBack_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            account acc = new account();
-            acc.ShowDialog();
-            this.Close();
+            if (Log_in.is_log == true)
+            {
+                this.Hide();
+                account acc = new account();
+                acc.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                this.Hide();
+                Log_in_and_Registration logreg = new Log_in_and_Registration();
+                logreg.ShowDialog();
+                this.Close();
+            }
         }
 
         private void description_label_Click(object sender, EventArgs e)
@@ -281,7 +301,7 @@ namespace prjkn
         private void save_Click(object sender, EventArgs e)
         {
             conn2.Open();
-            MySqlCommand cmd0 = new MySqlCommand($"delete from new_schema.accounts_films where accounts_id = {current_acc_i}", conn2);
+            MySqlCommand cmd0 = new MySqlCommand($"delete from new_schema.accounts_films where accounts_id = {current_acc_i} and films_id = {current_f_i}", conn2);
             MySqlCommand cmd = new MySqlCommand($"insert INTO new_schema.accounts_films (id, accounts_id, films_id, film_rating, accounts_films_status_id) VALUES ({current_i},{current_acc_i},{current_f_i},{comboBox1.SelectedIndex},{comboBox2.SelectedIndex}) ON DUPLICATE KEY UPDATE film_rating = {comboBox1.SelectedIndex}, accounts_films_status_id = {comboBox2.SelectedIndex}", conn2);
             cmd0.ExecuteNonQuery();
             cmd.ExecuteNonQuery();
