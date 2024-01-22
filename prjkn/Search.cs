@@ -7,6 +7,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,7 +60,6 @@ namespace prjkn
 
             for (int i = 0; i < genre_data.Count; i++)
             {
-
                 listView2.Items.Add(genre_data[i]);
             }
             conn.Close();
@@ -70,15 +70,17 @@ namespace prjkn
         public static List<int> ind_data = new List<int>();
         private void listview_Load()
         {
+            search_f();
             conn.Open();
             MySqlCommand cmd0 = new MySqlCommand(search_q, conn);
-            List<string> img_data = new List<string>();
+            List<MemoryStream> img_data = new List<MemoryStream>();
             MySqlDataReader dr = cmd0.ExecuteReader();
+            ind_data.Clear();
             while (dr.Read())
             {
-                img_data.Add(dr["image_url"].ToString());
+                img_data.Add(new MemoryStream((byte[])dr["image_url"]));
                 ind_data.Add(Convert.ToInt32(dr["id"]));
-                Debug.WriteLine(Convert.ToInt32(dr["id"]));
+                //Debug.WriteLine(Convert.ToInt32(dr["id"]));
             }
             dr.Close();
 
@@ -88,9 +90,8 @@ namespace prjkn
             list.ColorDepth = ColorDepth.Depth32Bit;
             for (int i = 0; i < img_data.Count; i++)
             {
-                String s = String.Concat("..\\..\\..\\..\\", img_data[i].ToString());
-                //Debug.WriteLine(s);
-                list.Images.Add(new Bitmap(s));
+
+                list.Images.Add(System.Drawing.Image.FromStream(img_data[i]));
             }
 
             listView1.LargeImageList = list;
@@ -104,6 +105,22 @@ namespace prjkn
             int p = search_q_o.LastIndexOf("LIMIT");
             search_q_o = search_q_o.Substring(0, p);
             MySqlCommand cmd1 = new MySqlCommand(search_q_o, conn);
+
+            //int currentIndex = listView1.SelectedItems[0].Index;
+            //ListViewItem item = listView1.Items[currentIndex];
+            //if (currentIndex > 0)
+            //{
+            //    listView1.Items.RemoveAt(currentIndex);
+            //    listView1.Items.Insert(ind_data[currentIndex], item);
+            //}
+
+            //for (int i = 0; i < ind_data.Count; i++)
+            //{
+            //    ListViewItem item = listView1.Items[i];
+            //    listView1.Items.RemoveAt(i);
+            //    listView1.Items.Insert(ind_data[i], item);
+            //}
+
             //Debug.WriteLine(Convert.ToInt32(cmd1.ExecuteScalar()));
             if (Convert.ToInt32(cmd1.ExecuteScalar()) - offset * 5 <= 0)
             {
@@ -135,6 +152,8 @@ namespace prjkn
             {
                 pictureBox1.Image = System.Drawing.Image.FromStream(Log_in.imgUser);
             }
+
+            Debug.WriteLine(offset);
         }
 
         private void Home_button_Click(object sender, EventArgs e)
@@ -191,8 +210,13 @@ namespace prjkn
         public static int current_film_i;
         private void listView1_Click(object sender, EventArgs e)
         {
+            for (int i = 0; i < ind_data.Count; i++)
+            {
+                Debug.WriteLine(ind_data[i]);
+            }
             current_film_i = listView1.SelectedIndices[0];
-            Debug.WriteLine(current_film_i);
+            current_film_i = ind_data[current_film_i];
+            Debug.WriteLine($"search cfi {current_film_i}");
         }
 
         private void page_f_Click(object sender, EventArgs e)
@@ -222,7 +246,7 @@ namespace prjkn
                 page_f.Visible = true;
             }
             conn.Close();
-            search_f();
+            //search_f();
             listview_Load();
         }
 
@@ -240,18 +264,19 @@ namespace prjkn
                 page_b.Enabled = true;
                 page_b.Visible = true;
             }
-            search_f();
+            //search_f();
             listview_Load();
         }
 
         private void button_search_Click(object sender, EventArgs e)
         {
-            search_f();
+            //search_f();
             listview_Load();
         }
         private void search_f()
         {
-            if (!(string.IsNullOrEmpty(search_textBox.Text)))
+            
+            if (!string.IsNullOrEmpty(search_textBox.Text))
             {
                 search_q = $"SELECT * FROM new_schema.films WHERE new_schema.films.name LIKE \"{$"{search_text}" + "%"}\" LIMIT {5 * (offset - 1)}, {5 * offset}";
                 search_textBox.Clear();
@@ -280,10 +305,10 @@ namespace prjkn
                 search_q = search_q + $" ORDER BY new_schema.films.id LIMIT {5 * (offset - 1)}, {5 * offset}";
             }
 
-            offset = 1;
-            page_b.Enabled = false;
-            page_b.Visible = false;
-            listview_Load();
+            //offset = 1;
+            //page_b.Enabled = false;
+            //page_b.Visible = false;
+            //listview_Load();
         }
         public static String search_text = null;
         private void search_textBox_TextChanged(object sender, EventArgs e)

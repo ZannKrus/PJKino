@@ -29,11 +29,11 @@ namespace prjkn
         }
         MySqlConnection conn = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=qwerty123456;database=new_schema");
         MySqlConnection conn2 = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=qwerty123456;database=new_schema");
-        public static int current_f_i = Search.current_film_i + 1;
+        //public static int current_f_i = Search.current_film_i ;
         private void Film_Page_Load(object sender, EventArgs e)
         {
-            current_f_i = Search.current_film_i + 1;
-            Debug.WriteLine($"cfi: {current_f_i}");
+            //current_f_i = Search.current_film_i ;
+            Debug.WriteLine($"fp cfi: {Search.current_film_i}");
             //панели
             PanelR.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelL.BackColor = Color.FromArgb(100, 0, 0, 0);
@@ -71,7 +71,7 @@ namespace prjkn
                 pictureBox1.Image = Image.FromStream(Log_in.imgUser);
             }
 
-            int current_film_i = Search.current_film_i + 1;
+            int current_film_i = Search.current_film_i;
             conn.Open();
 
             MySqlCommand cmd0 = new MySqlCommand($"SELECT * FROM new_schema.films WHERE id = {current_film_i}", conn);
@@ -79,7 +79,7 @@ namespace prjkn
             dr.Read();
             film_name.Text = dr["name"].ToString();
             description_label.Text = dr["description"].ToString();
-            pictureBox2.Image = new Bitmap(String.Concat("..\\..\\..\\..\\", dr["image_url"].ToString()));
+            pictureBox2.Image = Image.FromStream(new MemoryStream((byte[])dr["image_url"]));
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
             dr.Close();
 
@@ -171,7 +171,7 @@ namespace prjkn
         {
             conn.Open();
             flowLayoutPanel2.Controls.Clear();
-            MySqlCommand cmd_comm = new MySqlCommand($"SELECT films_id,nickname,comment FROM new_schema.accounts, new_schema.comments where accounts.id = comments.accounts_id and films_id = {current_f_i}", conn);
+            MySqlCommand cmd_comm = new MySqlCommand($"SELECT films_id,nickname,comment FROM new_schema.accounts, new_schema.comments where accounts.id = comments.accounts_id and films_id = {Search.current_film_i}", conn);
             MySqlDataReader rd = cmd_comm.ExecuteReader();
             while (rd.Read())
             {
@@ -318,8 +318,8 @@ namespace prjkn
         private void save_Click(object sender, EventArgs e)
         {
             conn2.Open();
-            MySqlCommand cmd0 = new MySqlCommand($"delete from new_schema.accounts_films where accounts_id = {current_acc_i} and films_id = {current_f_i}", conn2);
-            MySqlCommand cmd = new MySqlCommand($"insert INTO new_schema.accounts_films (id, accounts_id, films_id, film_rating, accounts_films_status_id) VALUES ({current_i},{current_acc_i},{current_f_i},{comboBox1.SelectedIndex},{comboBox2.SelectedIndex}) ON DUPLICATE KEY UPDATE film_rating = {comboBox1.SelectedIndex}, accounts_films_status_id = {comboBox2.SelectedIndex}", conn2);
+            MySqlCommand cmd0 = new MySqlCommand($"delete from new_schema.accounts_films where accounts_id = {current_acc_i} and films_id = {Search.current_film_i}", conn2);
+            MySqlCommand cmd = new MySqlCommand($"insert INTO new_schema.accounts_films (id, accounts_id, films_id, film_rating, accounts_films_status_id) VALUES ({current_i},{current_acc_i},{Search.current_film_i},{comboBox1.SelectedIndex},{comboBox2.SelectedIndex}) ON DUPLICATE KEY UPDATE film_rating = {comboBox1.SelectedIndex}, accounts_films_status_id = {comboBox2.SelectedIndex}", conn2);
             cmd0.ExecuteNonQuery();
             cmd.ExecuteNonQuery();
             conn2.Close();
@@ -333,7 +333,8 @@ namespace prjkn
         private void button1_Click(object sender, EventArgs e)
         {
             conn.Open();
-            MySqlCommand cmd = new MySqlCommand($"insert into new_schema.comments (id, accounts_id, films_id, comment) values({0},{current_acc_i},{current_f_i},\"{comment}\")", conn);
+            MySqlCommand cmd = new MySqlCommand($"insert into new_schema.comments (id, accounts_id, films_id, comment) values({0},{current_acc_i},{Search.current_film_i},?comment)", conn);
+            cmd.Parameters.Add(new MySqlParameter("comment", comment));
             cmd.ExecuteNonQuery();
             conn.Close();
             richTextBox1.Clear();

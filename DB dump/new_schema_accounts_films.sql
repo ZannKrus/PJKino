@@ -29,7 +29,7 @@ CREATE TABLE `accounts_films` (
   `film_rating` bigint DEFAULT NULL,
   `accounts_films_status_id` int DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=99 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=107 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `accounts_films` (
 
 LOCK TABLES `accounts_films` WRITE;
 /*!40000 ALTER TABLE `accounts_films` DISABLE KEYS */;
-INSERT INTO `accounts_films` VALUES (88,6,1,1,1),(98,1,1,5,2);
+INSERT INTO `accounts_films` VALUES (98,1,1,5,2),(102,6,5,6,2),(103,6,4,2,2),(104,6,3,1,1),(105,6,2,0,3),(106,6,1,8,2);
 /*!40000 ALTER TABLE `accounts_films` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-26 19:55:16
+-- Dump completed on 2024-01-22 13:42:35

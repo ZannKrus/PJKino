@@ -134,10 +134,14 @@ namespace prjkn
                     return;
                 }
 
-                String querry = "UPDATE accounts SET last_name = '" + textBox2.Text + "', first_name = '" + textBox1.Text + "', nickname = '" + textBox3.Text + "', email = '" + textBox4.Text + "' WHERE last_name = '" + textBox2.Text + "'";
+                String querry = $"UPDATE accounts SET last_name = ?last_name, first_name = ?first_name, nickname = ?nickname, email = ?email WHERE id = {Log_in.idUser}";
                 MySqlCommand command = new MySqlCommand(querry, conn);
 
                 conn.Open();
+                command.Parameters.Add(new MySqlParameter("last_name", textBox2.Text));
+                command.Parameters.Add(new MySqlParameter("first_name", textBox1.Text));
+                command.Parameters.Add(new MySqlParameter("nickname", textBox3.Text));
+                command.Parameters.Add(new MySqlParameter("email", textBox4.Text));
                 command.ExecuteNonQuery();
                 MessageBox.Show("Данные успешно обновлены");
 

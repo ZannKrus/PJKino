@@ -11,6 +11,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Org.BouncyCastle.Tls.Crypto.Impl.BC;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Diagnostics;
 
 namespace prjkn
 {
@@ -145,10 +147,15 @@ namespace prjkn
                     return;
                 }
 
-                String querry = "INSERT INTO accounts SELECT COUNT(*)+1, '" + ln_textBox.Text + "', '" + fn_textBox.Text + "', '" + mail_textBox.Text + "', '" + login_textBox.Text + "', '" + pass_textBox.Text + "' FROM accounts";
+                String querry = "INSERT INTO accounts (last_name, first_name, email, nickname, password) values (?ln, ?fn, ?mail, ?login, ?pass)";
                 MySqlCommand command = new MySqlCommand(querry, conn);
 
                 conn.Open();
+                command.Parameters.Add(new MySqlParameter("ln", ln_textBox.Text));
+                command.Parameters.Add(new MySqlParameter("fn", fn_textBox.Text));
+                command.Parameters.Add(new MySqlParameter("mail", mail_textBox.Text));
+                command.Parameters.Add(new MySqlParameter("login", login_textBox.Text));
+                command.Parameters.Add(new MySqlParameter("pass", pass_textBox.Text));
                 command.ExecuteNonQuery();
                 MessageBox.Show("Регистрация прошла успешно");
 
@@ -157,9 +164,11 @@ namespace prjkn
                 wlc.ShowDialog();
                 this.Close();
             }
-            catch
+            catch(Exception ex)
             {
                 MessageBox.Show("Ошибка");
+                Debug.WriteLine(ex.Message);
+
             }
             finally
             {

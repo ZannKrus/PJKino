@@ -92,7 +92,7 @@ namespace prjkn
                 logreg.ShowDialog();
                 this.Close();
             }
-            
+
         }
 
         private void Search_Button_Click(object sender, EventArgs e)

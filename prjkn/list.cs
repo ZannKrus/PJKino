@@ -63,15 +63,14 @@ namespace prjkn
             while (rd.Read())
             {
                 string i_u = rd.GetString("image_url");
-                Debug.WriteLine(i_u);
+                
                 string n = rd.GetString("name");
                 string s_n = rd.GetString("status_name");
                 string f_r = Convert.ToString(11 - Convert.ToInt32(rd.GetString("film_rating")));
 
-                String img_s = String.Concat("..\\..\\..\\..\\", i_u.ToString());
-                Debug.WriteLine(img_s);
-                Image img = Image.FromFile(img_s);
                 
+                Image img = Image.FromStream(new MemoryStream((byte[])rd["image_url"]));
+
 
                 imgList.Images.Add(n,img);
                 listView1.SmallImageList = imgList;
