@@ -157,6 +157,31 @@ namespace prjkn
                 command.Parameters.Add(new MySqlParameter("login", login_textBox.Text));
                 command.Parameters.Add(new MySqlParameter("pass", pass_textBox.Text));
                 command.ExecuteNonQuery();
+                byte[] imageToByte(Image img)
+                {
+                    using (var ms = new MemoryStream())
+                    {
+                        img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        return ms.ToArray();
+                    }
+                }
+                var userImage = imageToByte(Image.FromFile("..\\..\\..\\..\\images\\circles.jpg"));
+
+                
+
+                var command1 = new MySqlCommand("", conn);
+
+                command1.CommandText = $"UPDATE accounts SET avatar = @avatar WHERE nickname = \"{login_textBox.Text}\";";
+
+                var paramUserImage = new MySqlParameter("@avatar", MySqlDbType.LongBlob, userImage.Length);
+
+                paramUserImage.Value = userImage;
+
+                command1.Parameters.Add(paramUserImage);
+
+                command1.ExecuteNonQuery();
+
+                conn.Close();
                 MessageBox.Show("Регистрация прошла успешно");
 
                 this.Hide();

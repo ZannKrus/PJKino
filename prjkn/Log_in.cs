@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -133,11 +134,13 @@ namespace prjkn
 
                 else
                 {
+                    Debug.WriteLine($"l:{login_textBox.Text}, p:{pass_textBox.Text}");
                     MessageBox.Show("Неверные учетные данные", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     login_textBox.Clear();
                     pass_textBox.Clear();
 
                     login_textBox.Focus();
+                    
                 }
             }
             catch

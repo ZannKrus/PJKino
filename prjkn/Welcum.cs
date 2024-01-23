@@ -44,6 +44,7 @@ namespace prjkn
             }
 
 
+
             if (Log_in.is_log == true && Log_in.loginUser == "admin")
             {
                 admin_b.Visible = true;
