@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,19 +10,18 @@ using System.Windows.Forms;
 
 namespace prjkn
 {
-    public partial class admin : Form
+    public partial class film_add : Form
     {
-        public admin()
+        public film_add()
         {
             InitializeComponent();
         }
 
-        private void admin_Load(object sender, EventArgs e)
+        private void film_add_Load(object sender, EventArgs e)
         {
             PanelR.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelL.BackColor = Color.FromArgb(100, 0, 0, 0);
             PanelT.BackColor = Color.FromArgb(150, 100, 79, 47);
-            PanelBack.BackColor = Color.FromArgb(75, 255, 255, 255);
             Menu_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Search_button.BackColor = Color.FromArgb(0, 100, 79, 47);
             Home_button.BackColor = Color.FromArgb(0, 100, 79, 47);
@@ -60,45 +58,6 @@ namespace prjkn
             this.Hide();
             Welcum wlc = new Welcum();
             wlc.ShowDialog();
-            this.Close();
-        }
-
-        private void PanelBack_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            account acc = new account();
-            acc.ShowDialog();
-            this.Close();
-        }
-
-        private static string query_text;
-
-        private void query_textBox_TextChanged(object sender, EventArgs e)
-        {
-            query_text = query_textBox.Text;
-        }
-        MySqlConnection conn = new MySqlConnection("server=127.0.0.1;Uid=root;pwd=qwerty123456;database=new_schema");
-        private void Execute_b_Click(object sender, EventArgs e)
-        {
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand(query_text, conn);
-            cmd.ExecuteNonQuery();
-            conn.Close();
-        }
-
-        private void addfilm_b_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            film_add add = new film_add();
-            add.ShowDialog();
-            this.Close();
-        }
-
-        private void editfilm_b_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            film_edit edit = new film_edit();
-            edit.ShowDialog();
             this.Close();
         }
     }

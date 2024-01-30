@@ -38,6 +38,8 @@
             PanelR = new Panel();
             query_textBox = new TextBox();
             Execute_b = new Button();
+            addfilm_b = new Button();
+            editfilm_b = new Button();
             PanelT.SuspendLayout();
             SuspendLayout();
             // 
@@ -124,7 +126,7 @@
             query_textBox.Margin = new Padding(3, 4, 3, 4);
             query_textBox.Multiline = true;
             query_textBox.Name = "query_textBox";
-            query_textBox.Size = new Size(841, 563);
+            query_textBox.Size = new Size(656, 563);
             query_textBox.TabIndex = 3;
             query_textBox.TextChanged += query_textBox_TextChanged;
             // 
@@ -140,6 +142,26 @@
             Execute_b.UseVisualStyleBackColor = true;
             Execute_b.Click += Execute_b_Click;
             // 
+            // addfilm_b
+            // 
+            addfilm_b.Location = new Point(868, 524);
+            addfilm_b.Name = "addfilm_b";
+            addfilm_b.Size = new Size(121, 53);
+            addfilm_b.TabIndex = 5;
+            addfilm_b.Text = "Добавить фильм";
+            addfilm_b.UseVisualStyleBackColor = true;
+            addfilm_b.Click += addfilm_b_Click;
+            // 
+            // editfilm_b
+            // 
+            editfilm_b.Location = new Point(868, 583);
+            editfilm_b.Name = "editfilm_b";
+            editfilm_b.Size = new Size(121, 53);
+            editfilm_b.TabIndex = 6;
+            editfilm_b.Text = "Редактировать фильм";
+            editfilm_b.UseVisualStyleBackColor = true;
+            editfilm_b.Click += editfilm_b_Click;
+            // 
             // admin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -147,6 +169,8 @@
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1134, 676);
+            Controls.Add(editfilm_b);
+            Controls.Add(addfilm_b);
             Controls.Add(Execute_b);
             Controls.Add(query_textBox);
             Controls.Add(PanelR);
@@ -173,5 +197,7 @@
         private Button Home_button;
         private TextBox query_textBox;
         private Button Execute_b;
+        private Button addfilm_b;
+        private Button editfilm_b;
     }
 }
