@@ -56,8 +56,9 @@
             PanelT.Controls.Add(Menu_button);
             PanelT.Dock = DockStyle.Top;
             PanelT.Location = new Point(0, 0);
+            PanelT.Margin = new Padding(3, 2, 3, 2);
             PanelT.Name = "PanelT";
-            PanelT.Size = new Size(876, 67);
+            PanelT.Size = new Size(766, 50);
             PanelT.TabIndex = 26;
             // 
             // Home_button
@@ -66,9 +67,10 @@
             Home_button.BackgroundImageLayout = ImageLayout.Stretch;
             Home_button.FlatAppearance.BorderSize = 0;
             Home_button.FlatStyle = FlatStyle.Flat;
-            Home_button.Location = new Point(107, 15);
+            Home_button.Location = new Point(94, 11);
+            Home_button.Margin = new Padding(3, 2, 3, 2);
             Home_button.Name = "Home_button";
-            Home_button.Size = new Size(40, 40);
+            Home_button.Size = new Size(35, 30);
             Home_button.TabIndex = 4;
             Home_button.UseVisualStyleBackColor = true;
             Home_button.Click += Home_button_Click;
@@ -79,9 +81,10 @@
             Search_button.BackgroundImageLayout = ImageLayout.Stretch;
             Search_button.FlatAppearance.BorderSize = 0;
             Search_button.FlatStyle = FlatStyle.Flat;
-            Search_button.Location = new Point(61, 15);
+            Search_button.Location = new Point(53, 11);
+            Search_button.Margin = new Padding(3, 2, 3, 2);
             Search_button.Name = "Search_button";
-            Search_button.Size = new Size(40, 40);
+            Search_button.Size = new Size(35, 30);
             Search_button.TabIndex = 3;
             Search_button.UseVisualStyleBackColor = true;
             Search_button.Click += Search_button_Click;
@@ -92,9 +95,10 @@
             Menu_button.BackgroundImageLayout = ImageLayout.Stretch;
             Menu_button.FlatAppearance.BorderSize = 0;
             Menu_button.FlatStyle = FlatStyle.Flat;
-            Menu_button.Location = new Point(17, 15);
+            Menu_button.Location = new Point(15, 11);
+            Menu_button.Margin = new Padding(3, 2, 3, 2);
             Menu_button.Name = "Menu_button";
-            Menu_button.Size = new Size(37, 40);
+            Menu_button.Size = new Size(32, 30);
             Menu_button.TabIndex = 2;
             Menu_button.UseVisualStyleBackColor = true;
             Menu_button.Click += Menu_button_Click;
@@ -102,26 +106,29 @@
             // PanelL
             // 
             PanelL.Dock = DockStyle.Left;
-            PanelL.Location = new Point(0, 67);
+            PanelL.Location = new Point(0, 50);
+            PanelL.Margin = new Padding(3, 2, 3, 2);
             PanelL.Name = "PanelL";
-            PanelL.Size = new Size(139, 431);
+            PanelL.Size = new Size(122, 388);
             PanelL.TabIndex = 27;
             // 
             // PanelR
             // 
             PanelR.Dock = DockStyle.Right;
-            PanelR.Location = new Point(737, 67);
+            PanelR.Location = new Point(644, 50);
+            PanelR.Margin = new Padding(3, 2, 3, 2);
             PanelR.Name = "PanelR";
-            PanelR.Size = new Size(139, 431);
+            PanelR.Size = new Size(122, 388);
             PanelR.TabIndex = 28;
             // 
             // button1
             // 
             button1.BackColor = Color.White;
             button1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(357, 413);
+            button1.Location = new Point(312, 310);
+            button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
-            button1.Size = new Size(229, 61);
+            button1.Size = new Size(200, 46);
             button1.TabIndex = 49;
             button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = false;
@@ -129,9 +136,10 @@
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(357, 340);
+            textBox5.Location = new Point(312, 255);
+            textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(365, 54);
+            textBox5.Size = new Size(320, 45);
             textBox5.TabIndex = 48;
             // 
             // label5
@@ -140,18 +148,19 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(198, 338);
+            label5.Location = new Point(173, 254);
             label5.Name = "label5";
-            label5.Size = new Size(153, 54);
+            label5.Size = new Size(124, 45);
             label5.TabIndex = 47;
             label5.Text = "Жанры";
             // 
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(357, 280);
+            textBox4.Location = new Point(312, 210);
+            textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(365, 54);
+            textBox4.Size = new Size(320, 45);
             textBox4.TabIndex = 46;
             // 
             // label4
@@ -160,18 +169,19 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(193, 280);
+            label4.Location = new Point(169, 210);
             label4.Name = "label4";
-            label4.Size = new Size(158, 54);
+            label4.Size = new Size(129, 45);
             label4.TabIndex = 45;
             label4.Text = "Актеры";
             // 
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(357, 220);
+            textBox3.Location = new Point(312, 165);
+            textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(365, 54);
+            textBox3.Size = new Size(320, 45);
             textBox3.TabIndex = 44;
             // 
             // label3
@@ -180,18 +190,19 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(154, 220);
+            label3.Location = new Point(135, 165);
             label3.Name = "label3";
-            label3.Size = new Size(200, 54);
+            label3.Size = new Size(164, 45);
             label3.TabIndex = 43;
             label3.Text = "Режиссер";
             // 
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(357, 160);
+            textBox2.Location = new Point(312, 120);
+            textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(365, 54);
+            textBox2.Size = new Size(320, 45);
             textBox2.TabIndex = 42;
             // 
             // label2
@@ -200,18 +211,19 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(154, 160);
+            label2.Location = new Point(135, 120);
             label2.Name = "label2";
-            label2.Size = new Size(204, 54);
+            label2.Size = new Size(166, 45);
             label2.TabIndex = 41;
             label2.Text = "Описание";
             // 
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(357, 100);
+            textBox1.Location = new Point(312, 75);
+            textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(365, 54);
+            textBox1.Size = new Size(320, 45);
             textBox1.TabIndex = 40;
             // 
             // label1
@@ -220,19 +232,19 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(154, 100);
+            label1.Location = new Point(135, 75);
             label1.Name = "label1";
-            label1.Size = new Size(197, 54);
+            label1.Size = new Size(160, 45);
             label1.TabIndex = 39;
             label1.Text = "Название";
             // 
             // film_edit
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(876, 498);
+            ClientSize = new Size(766, 438);
             Controls.Add(button1);
             Controls.Add(textBox5);
             Controls.Add(label5);
@@ -248,6 +260,7 @@
             Controls.Add(PanelL);
             Controls.Add(PanelT);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(3, 2, 3, 2);
             Name = "film_edit";
             Text = "Редактировать фильм";
             Load += film_edit_Load;

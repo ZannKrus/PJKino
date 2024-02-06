@@ -85,10 +85,14 @@ namespace prjkn
 
             MySqlCommand cmd4 = new MySqlCommand($"SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM new_schema.directors WHERE id = {current_film_i}", conn);
             MySqlDataReader dr1 = cmd4.ExecuteReader();
-            dr1.Read();
-            director_label_fn.Text = dr1["full_name"].ToString();
+            //dr1.Read();
+            //director_label_fn.Text = dr1["full_name"].ToString();
+            //dr1.Close();
+            if (dr1.Read())
+            {
+                director_label_fn.Text = dr1["full_name"].ToString();
+            }
             dr1.Close();
-
             MySqlCommand cmd5 = new MySqlCommand($"SELECT CONCAT(first_name, ' ', last_name) AS full_name FROM films JOIN films_actors ON films.id = films_actors.films_id JOIN actors ON films_actors.actors_id = actors.id WHERE films.id = {current_film_i}", conn);
             MySqlDataReader dr5 = cmd5.ExecuteReader();
             while (dr5.Read())

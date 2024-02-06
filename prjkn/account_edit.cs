@@ -205,9 +205,6 @@ namespace prjkn
                 MemoryStream ms = new MemoryStream(imageToByte(img_s));
                 Log_in.imgUser = ms;
             }
-            
-
-
         }
     }
 }
