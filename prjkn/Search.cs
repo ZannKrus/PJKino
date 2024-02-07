@@ -49,7 +49,7 @@ namespace prjkn
             conn.Open();
             listView2.CheckBoxes = true;
 
-            MySqlCommand cmd1 = new MySqlCommand("SELECT * FROM new_schema.genres", conn);
+            MySqlCommand cmd1 = new MySqlCommand("SELECT distinct genre_name FROM new_schema.genres", conn);
             List<string> genre_data = new List<string>();
             MySqlDataReader genre_dr = cmd1.ExecuteReader();
             while (genre_dr.Read())

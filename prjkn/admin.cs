@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.VisualBasic;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -101,5 +102,18 @@ namespace prjkn
             edit.ShowDialog();
             this.Close();
         }
-    }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string delName = Interaction.InputBox("Prompt", "Title", "Default");
+            conn.Open();
+            MySqlCommand cmd0 = new MySqlCommand($"SELECT id FROM new_schema.films where name like \"{delName + "%"}\"", conn);
+            int delID = Convert.ToInt32(cmd0.ExecuteScalar());
+            MySqlCommand cmd1 = new MySqlCommand($"DELETE FROM new_schema.films where new_schema.films.id = {delID}", conn);
+            cmd1.ExecuteNonQuery();
+            conn.Close();
+        }
+
+        
+}
 }
