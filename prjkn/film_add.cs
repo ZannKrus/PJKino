@@ -92,8 +92,8 @@ namespace prjkn
             string[] actors_a = actors.Text.Split(";");
             foreach (string actors_i in actors_a)
             {
-                string actorLName = actors_i.Substring(0, dir.Text.IndexOf(' '));
-                string actorFName = actors_i.Substring(dir.Text.IndexOf(' '));
+                string actorLName = actors_i.Substring(0, actors.Text.IndexOf(' '));
+                string actorFName = actors_i.Substring(actors.Text.IndexOf(' '));
                 MySqlCommand cmd3 = new MySqlCommand($"INSERT IGNORE INTO new_schema.actors (last_name, first_name) VALUES (\"{actorLName}\", \"{actorFName}\");SET @actor_id = LAST_INSERT_ID();INSERT INTO new_schema.films_actors (actors_id, films_id) VALUES(@actor_id, @film_id);COMMIT;", conn);
                 cmd3.ExecuteNonQuery();
             }
@@ -111,10 +111,10 @@ namespace prjkn
         }
         public byte[] imageToByte(Image img)
         {
-            using (var ms = new MemoryStream())
+            using (var ms1 = new MemoryStream())
             {
-                img.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                return ms.ToArray();
+                img.Save(ms1, System.Drawing.Imaging.ImageFormat.Jpeg);
+                return ms1.ToArray();
             }
         }
         private void name_TextChanged(object sender, EventArgs e)

@@ -46,7 +46,11 @@
             label2 = new Label();
             textBox1 = new TextBox();
             label1 = new Label();
+            button2 = new Button();
+            label6 = new Label();
+            pictureBox1 = new PictureBox();
             PanelT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // PanelT
@@ -109,7 +113,7 @@
             PanelL.Location = new Point(0, 50);
             PanelL.Margin = new Padding(3, 2, 3, 2);
             PanelL.Name = "PanelL";
-            PanelL.Size = new Size(122, 388);
+            PanelL.Size = new Size(122, 479);
             PanelL.TabIndex = 27;
             // 
             // PanelR
@@ -118,25 +122,26 @@
             PanelR.Location = new Point(644, 50);
             PanelR.Margin = new Padding(3, 2, 3, 2);
             PanelR.Name = "PanelR";
-            PanelR.Size = new Size(122, 388);
+            PanelR.Size = new Size(122, 479);
             PanelR.TabIndex = 28;
             // 
             // button1
             // 
             button1.BackColor = Color.White;
             button1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(312, 310);
+            button1.Location = new Point(305, 478);
             button1.Margin = new Padding(3, 2, 3, 2);
             button1.Name = "button1";
             button1.Size = new Size(200, 46);
             button1.TabIndex = 49;
             button1.Text = "Сохранить";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // textBox5
             // 
             textBox5.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox5.Location = new Point(312, 255);
+            textBox5.Location = new Point(305, 305);
             textBox5.Margin = new Padding(3, 2, 3, 2);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(320, 45);
@@ -148,7 +153,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(173, 254);
+            label5.Location = new Point(166, 304);
             label5.Name = "label5";
             label5.Size = new Size(124, 45);
             label5.TabIndex = 47;
@@ -157,7 +162,7 @@
             // textBox4
             // 
             textBox4.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox4.Location = new Point(312, 210);
+            textBox4.Location = new Point(305, 260);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(320, 45);
@@ -169,7 +174,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(169, 210);
+            label4.Location = new Point(162, 260);
             label4.Name = "label4";
             label4.Size = new Size(129, 45);
             label4.TabIndex = 45;
@@ -178,7 +183,7 @@
             // textBox3
             // 
             textBox3.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox3.Location = new Point(312, 165);
+            textBox3.Location = new Point(305, 215);
             textBox3.Margin = new Padding(3, 2, 3, 2);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(320, 45);
@@ -190,7 +195,7 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(135, 165);
+            label3.Location = new Point(128, 215);
             label3.Name = "label3";
             label3.Size = new Size(164, 45);
             label3.TabIndex = 43;
@@ -199,7 +204,7 @@
             // textBox2
             // 
             textBox2.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox2.Location = new Point(312, 120);
+            textBox2.Location = new Point(305, 170);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(320, 45);
@@ -211,7 +216,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(135, 120);
+            label2.Location = new Point(128, 170);
             label2.Name = "label2";
             label2.Size = new Size(166, 45);
             label2.TabIndex = 41;
@@ -220,7 +225,7 @@
             // textBox1
             // 
             textBox1.Font = new Font("Segoe UI", 21F, FontStyle.Regular, GraphicsUnit.Point);
-            textBox1.Location = new Point(312, 75);
+            textBox1.Location = new Point(305, 125);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(320, 45);
@@ -232,11 +237,43 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(135, 75);
+            label1.Location = new Point(128, 125);
             label1.Name = "label1";
             label1.Size = new Size(160, 45);
             label1.TabIndex = 39;
             label1.Text = "Название";
+            // 
+            // button2
+            // 
+            button2.Location = new Point(128, 74);
+            button2.Name = "button2";
+            button2.Size = new Size(510, 35);
+            button2.TabIndex = 50;
+            button2.Text = "Выбрать фильм";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.BackColor = Color.Transparent;
+            label6.Font = new Font("Segoe UI", 24F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.White;
+            label6.Location = new Point(162, 349);
+            label6.Name = "label6";
+            label6.Size = new Size(126, 45);
+            label6.TabIndex = 51;
+            label6.Text = "Постер";
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(305, 355);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(100, 118);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 52;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
             // 
             // film_edit
             // 
@@ -244,7 +281,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(766, 438);
+            ClientSize = new Size(766, 529);
+            Controls.Add(pictureBox1);
+            Controls.Add(label6);
+            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(textBox5);
             Controls.Add(label5);
@@ -265,6 +305,7 @@
             Text = "Редактировать фильм";
             Load += film_edit_Load;
             PanelT.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -288,5 +329,8 @@
         private Label label2;
         private TextBox textBox1;
         private Label label1;
+        private Button button2;
+        private Label label6;
+        private PictureBox pictureBox1;
     }
 }
